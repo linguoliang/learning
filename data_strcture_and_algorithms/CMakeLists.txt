@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.2)
+project(data_strcture_and_algorithms)
+
+add_subdirectory(concurrent_data_strctures)
+add_subdirectory(pattern_matching)
+add_subdirectory(dynamic_programming)
