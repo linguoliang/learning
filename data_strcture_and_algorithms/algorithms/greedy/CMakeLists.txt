@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.2)
-project(data_strctures)
+project(greedy)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11")
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src DATA_STRCTURES_SOURCE_FILES)
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src GREEDY_SOURCE_FILES)
 
-add_executable(data_strctures ${DATA_STRCTURES_SOURCE_FILES})
+add_executable(greedy ${GREEDY_SOURCE_FILES})
