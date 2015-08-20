@@ -1,81 +1,36 @@
 #include <iostream>
 #include <atomic>
+#include <chrono>
 #include <thread>
+#include <vector>
 
-void test() {
-  int x;
-  int x_init = true;
-  int y = 100;
+typedef std::chrono::high_resolution_clock Clock;
+typedef std::chrono::microseconds microseconds;
 
-  auto f1 = [&]() {
-    x = 42;
-    x_init = true;
-  };
-  auto f2 = [&]() {
-    while (!x_init) {
-      y = x;
-    }
-  };
+std::atomic<int> cnt = {0};
 
-  std::thread t1(f1);
-  std::thread t2(f2);
-
-  t1.join();
-  t2.join();
-
-  std::cout << y << std::endl;
+void f() {
+  for (int n = 0; n < 1000000; ++n) {
+    cnt.fetch_add(1, std::memory_order_relaxed);
+    // cnt.fetch_add(1, std::memory_order_seq_cst);
+  }
 }
 
-void test1() {
-  int x;
-  std::atomic<bool> x_init;
-  int y = 100;
+int main() {
+  Clock::time_point t0 = Clock::now();
 
-  auto f1 = [&]() {
-    x = 42;
-    x_init.store(true);
-  };
-  auto f2 = [&]() {
-    while (!x_init.load()) {
-      y = x;
-    }
-  };
+  std::vector<std::thread> v;
+  for (int n = 0; n < 100; ++n) {
+    v.emplace_back(f);
+  }
+  for (auto& t : v) {
+    t.join();
+  }
+  std::cout << "Final counter value is " << cnt << '\n';
 
-  std::thread t1(f1);
-  std::thread t2(f2);
+  Clock::time_point t1 = Clock::now();
 
-  t1.join();
-  t2.join();
+  microseconds ms = std::chrono::duration_cast<microseconds>(t1 - t0);
 
-  std::cout << y << std::endl;
-}
-
-void test2() {
-  std::atomic_int x;
-  std::atomic<bool> x_init;
-  std::atomic_int y;
-  y.store(100);
-
-  auto f1 = [&]() {
-    x.store(42);
-    x_init.store(true);
-  };
-  auto f2 = [&]() {
-    while (!x_init.load()) {
-      y.store(x.load());
-    }
-  };
-
-  std::thread t1(f1);
-  std::thread t2(f2);
-
-  t1.join();
-  t2.join();
-
-  std::cout << y << std::endl;
-}
-
-int main(void) {
-  test1();
-  return 0;
+  std::cout << ms.count() << std::endl;
 }
