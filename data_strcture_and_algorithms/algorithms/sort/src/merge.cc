@@ -21,7 +21,7 @@ void m_merge(int arr[], int l, int m, int r) {
   int n1 = m - l;
   int n2 = r - m + 1;
 
-  int rarr[n2];
+  int *rarr = new int[n2];
   for (int i = 0; i < n2; ++i) {
     rarr[i] = arr[m + i];
   }
@@ -40,4 +40,6 @@ void m_merge(int arr[], int l, int m, int r) {
     arr[l + n1 + n2 - 1] = rarr[n2 - 1];
     --n2;
   }
+
+  delete[] rarr;
 }

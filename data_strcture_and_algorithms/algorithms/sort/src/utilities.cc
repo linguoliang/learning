@@ -6,9 +6,12 @@ void swap(int *a, int *b) {
   *a = tmp;
 }
 
-void print_array(int arr[], int n) {
-  for (int i = 0; i < n; i++) {
-    std::cout << arr[i] << " ";
+int **new_two_dim_array(int x, int y) {
+  int **arr = new int *[x];
+
+  for (int i = 0; i < y; ++i) {
+    arr[i] = new int[y];
   }
-  std::cout << std::endl;
+
+  return arr;
 }
