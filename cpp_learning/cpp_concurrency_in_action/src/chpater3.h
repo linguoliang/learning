@@ -2,8 +2,8 @@
 // Created by chaomai on 5/18/15.
 //
 
-#ifndef CPPLEARNING_CHPATER3_H
-#define CPPLEARNING_CHPATER3_H
+#ifndef CHPATER3_H
+#define CHPATER3_H
 
 #include <iostream>
 #include <list>
@@ -19,13 +19,14 @@ struct empty_stack : std::exception {
   const char *what() const throw();
 };
 
-template<typename T>
+template <typename T>
 class threadsafe_stack {
  private:
   std::stack<T> data;
   mutable std::mutex m;
+
  public:
-  threadsafe_stack() { }
+  threadsafe_stack() {}
 
   threadsafe_stack(const threadsafe_stack &other) {
     std::lock_guard<std::mutex> lock(other.m);
@@ -78,9 +79,8 @@ class hierarchical_mutex {
   }
 
  public:
-  explicit hierarchical_mutex(unsigned long value) :
-      hierarchy_value(value),
-      previous_hierarchy_value(0) { }
+  explicit hierarchical_mutex(unsigned long value)
+      : hierarchy_value(value), previous_hierarchy_value(0) {}
 
   void lock() {
     check_for_hierarchy_violation();
@@ -95,11 +95,10 @@ class hierarchical_mutex {
 
   bool try_lock() {
     check_for_hierarchy_violation();
-    if (!internal_mutex.try_lock())
-      return false;
+    if (!internal_mutex.try_lock()) return false;
     update_hierarchy_value();
     return true;
   }
 };
 
-#endif //CPPLEARNING_CHPATER3_H
+#endif

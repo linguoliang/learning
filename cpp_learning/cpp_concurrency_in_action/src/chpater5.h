@@ -2,8 +2,8 @@
 // Created by chaomai on 6/1/15.
 //
 
-#ifndef CPPLEARNING_CHPATER5_H
-#define CPPLEARNING_CHPATER5_H
+#ifndef CHPATER5_H
+#define CHPATER5_H
 
 #include <string>
 #include <atomic>
@@ -19,17 +19,16 @@ void chpater5();
 
 class spinlock_mutex {
   std::atomic_flag flag;
+
  public:
-  spinlock_mutex() :
-      flag(ATOMIC_FLAG_INIT) { }
+  spinlock_mutex() : flag(ATOMIC_FLAG_INIT) {}
 
   void lock() {
-    while (flag.test_and_set(std::memory_order_acquire));
+    while (flag.test_and_set(std::memory_order_acquire))
+      ;
   }
 
-  void unlock() {
-    flag.clear(std::memory_order_release);
-  }
+  void unlock() { flag.clear(std::memory_order_release); }
 };
 
-#endif //CPPLEARNING_CHPATER5_H
+#endif

@@ -2,7 +2,7 @@
 #include "permutations.h"
 
 int main() {
-  KnightsTour(9);
+  KnightsTour(8);
   // Permutations("abc");
   return 0;
 }

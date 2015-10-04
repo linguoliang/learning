@@ -18,12 +18,11 @@ void add_to_list(int new_value) {
 
 bool list_contains(int value_to_find) {
   std::lock_guard<std::mutex> guard(some_mutex);
-  return std::find(some_list.begin(), some_list.end(), value_to_find)
-         != some_list.end();
+  return std::find(some_list.begin(), some_list.end(), value_to_find) !=
+         some_list.end();
 }
 
-class some_big_object {
-};
+class some_big_object {};
 
 void swap(some_big_object &lhs, some_big_object &rhs);
 
@@ -31,12 +30,12 @@ class X {
  private:
   some_big_object some_detail;
   std::mutex m;
+
  public:
-  X(some_big_object const &sd) : some_detail(sd) { }
+  X(some_big_object const &sd) : some_detail(sd) {}
 
   friend void swap(X &lhs, X &rhs) {
-    if (&lhs == &rhs)
-      return;
+    if (&lhs == &rhs) return;
     std::lock(lhs.m, rhs.m);
     std::lock_guard<std::mutex> lock_a(lhs.m, std::adopt_lock);
     std::lock_guard<std::mutex> lock_b(rhs.m, std::adopt_lock);
@@ -50,12 +49,12 @@ class X1 {
  private:
   some_big_object some_detail;
   std::mutex m;
+
  public:
-  X1(some_big_object const &sd) : some_detail(sd) { }
+  X1(some_big_object const &sd) : some_detail(sd) {}
 
   friend void swap1(X1 &lhs, X1 &rhs) {
-    if (&lhs == &rhs)
-      return;
+    if (&lhs == &rhs) return;
     std::unique_lock<std::mutex> lock_a(lhs.m, std::defer_lock);
     std::unique_lock<std::mutex> lock_b(lhs.m, std::defer_lock);
     std::lock(lock_a, lock_b);
@@ -111,8 +110,8 @@ void chapter3ex4() {
   auto func1 = [&mutex, &mutex1, &res]() {
     std::lock_guard<std::mutex> lock_guard(mutex);
     std::lock_guard<std::mutex> lock_guard1(mutex1);
-//    std::lock_guard<std::mutex> lock_guard1(mutex1);
-//    std::lock_guard<std::mutex> lock_guard(mutex);
+    //    std::lock_guard<std::mutex> lock_guard1(mutex1);
+    //    std::lock_guard<std::mutex> lock_guard(mutex);
     std::cout << "run func1" << std::endl;
     res++;
   };
@@ -155,8 +154,8 @@ void chapter3ex5() {
   auto func2 = [&mutex, &mutex1, &res]() {
     std::lock(mutex, mutex1);
 
-    //possible live lock here???
-//    std::lock(mutex1, mutex);
+    // possible live lock here???
+    //    std::lock(mutex1, mutex);
 
     std::lock_guard<std::mutex> lock_guard(mutex, std::adopt_lock);
     std::lock_guard<std::mutex> lock_guard1(mutex1, std::adopt_lock);
@@ -197,8 +196,8 @@ void chapter3ex6() {
     std::unique_lock<std::mutex> unique_lock1(mutex1, std::defer_lock);
     std::lock(unique_lock, unique_lock1);
 
-    //possible live lock here???
-//    std::lock(unique_lock1, unique_lock);
+    // possible live lock here???
+    //    std::lock(unique_lock1, unique_lock);
 
     std::cout << "run func2" << std::endl;
     res++;
@@ -226,8 +225,8 @@ void chapter3ex7() {
     while (true) {
       std::lock_guard<std::mutex> lock_guard(mutex);
       std::lock_guard<std::mutex> lock_guard1(mutex1);
-//    std::lock_guard<std::mutex> lock_guard1(mutex1);
-//    std::lock_guard<std::mutex> lock_guard(mutex);
+      //    std::lock_guard<std::mutex> lock_guard1(mutex1);
+      //    std::lock_guard<std::mutex> lock_guard(mutex);
       std::cout << "run func1" << std::endl;
     }
 
@@ -266,8 +265,8 @@ void chapter3ex8() {
     while (true) {
       std::lock(mutex, mutex1);
 
-      //possible live lock here???
-//    std::lock(mutex1, mutex);
+      // possible live lock here???
+      //    std::lock(mutex1, mutex);
 
       std::lock_guard<std::mutex> lock_guard(mutex, std::adopt_lock);
       std::lock_guard<std::mutex> lock_guard1(mutex1, std::adopt_lock);
@@ -306,8 +305,8 @@ void chapter3ex9() {
     std::unique_lock<std::mutex> unique_lock1(mutex1, std::defer_lock);
     std::lock(unique_lock, unique_lock1);
 
-    //possible live lock here???
-//    std::lock(unique_lock1, unique_lock);
+    // possible live lock here???
+    //    std::lock(unique_lock1, unique_lock);
 
     std::cout << "run func2" << std::endl;
     res++;
@@ -330,15 +329,11 @@ void chapter3ex9() {
 void chpater3ex9() {
   std::thread t1;
   std::thread t2;
-  auto f1 = [](std::thread t2) {
-    t2.join();
-  };
-  auto f2 = [](std::thread t1) {
-    t1.join();
-  };
+  auto f1 = [](std::thread t2) { t2.join(); };
+  auto f2 = [](std::thread t1) { t1.join(); };
 
-//  t1 = std::thread(f1, t2);
-//  t2 = std::thread(f2, t1);
+  //  t1 = std::thread(f1, t2);
+  //  t2 = std::thread(f2, t1);
 }
 
 void chpater3ex10() {
@@ -369,9 +364,7 @@ void chpater3ex10() {
 
   hierarchical_mutex other_mutex(100);
 
-  auto do_other_stuff = []() {
-    std::cout << "do other stuff" << std::endl;
-  };
+  auto do_other_stuff = []() { std::cout << "do other stuff" << std::endl; };
 
   auto other_stuff = [&]() {
     high_level_func();
@@ -389,34 +382,34 @@ void chpater3ex11() {
   std::mutex mutex1;
   std::mutex mutex2;
 
-//  {
-//    std::lock_guard<std::mutex> lock_guard(mutex1);
-//    auto lg = std::move(lock_guard);
-//  }
+  //  {
+  //    std::lock_guard<std::mutex> lock_guard(mutex1);
+  //    auto lg = std::move(lock_guard);
+  //  }
 
   {
     mutex1.lock();
     std::unique_lock<std::mutex> unique_lock(mutex1, std::adopt_lock);
     auto ul = std::move(unique_lock);
     ul.unlock();
-//    unique_lock.unlock();
+    //    unique_lock.unlock();
     mutex2.lock();
   }
 }
 
 void chpater3() {
-//  chpater3ex1();
-//  chpater3ex2();
-//  chapter3ex3();
-//  chapter3ex4();
+  //  chpater3ex1();
+  //  chpater3ex2();
+  //  chapter3ex3();
+  //  chapter3ex4();
 
   // problems here
-//  chapter3ex5();
-//  chapter3ex6();
-//  chapter3ex7();
-//  chapter3ex8();
+  //  chapter3ex5();
+  //  chapter3ex6();
+  //  chapter3ex7();
+  //  chapter3ex8();
 
-//  chpater3ex9();
-//  chpater3ex10();
+  //  chpater3ex9();
+  //  chpater3ex10();
   chpater3ex11();
 }

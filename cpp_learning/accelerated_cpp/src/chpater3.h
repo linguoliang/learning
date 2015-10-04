@@ -2,8 +2,10 @@
 #define CHPATER3_H_
 
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
+using std::cout;
 using std::vector;
 
 void chpater3();

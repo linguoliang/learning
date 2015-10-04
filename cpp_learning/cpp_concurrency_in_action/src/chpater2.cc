@@ -12,9 +12,7 @@ void do_work(double data) {
   std::cout << data << std::endl;
 }
 
-void update_data(int id, double &data) {
-  data = 2.0;
-}
+void update_data(int id, double &data) { data = 2.0; }
 
 class X {
  public:
@@ -25,11 +23,11 @@ void chpater2ex1() {
   int id = 1;
   double data = 1.0;
 
-//  std::thread t(update_data, id, std::ref(data));
+  //  std::thread t(update_data, id, std::ref(data));
   // won't work
-//  std::thread t(update_data, id, data);
-//  t.join();
-//  std::cout << data << std::endl;
+  //  std::thread t(update_data, id, data);
+  //  t.join();
+  //  std::cout << data << std::endl;
   X x;
   std::thread t(&X::do_work, &x, id);
   t.join();
@@ -37,9 +35,9 @@ void chpater2ex1() {
 
 class thread_guard {
   std::thread &t;
+
  public:
-  explicit thread_guard(std::thread &t_) :
-      t(t_) { }
+  explicit thread_guard(std::thread &t_) : t(t_) {}
 
   ~thread_guard() {
     if (t.joinable()) {
@@ -54,17 +52,15 @@ class thread_guard {
 
 class scoped_thread {
   std::thread t;
+
  public:
-  explicit scoped_thread(std::thread t_) :
-      t(std::move(t_)) {
+  explicit scoped_thread(std::thread t_) : t(std::move(t_)) {
     if (!t.joinable()) {
       throw std::logic_error("No thread");
     }
   }
 
-  ~scoped_thread() {
-    t.join();
-  }
+  ~scoped_thread() { t.join(); }
 
   scoped_thread(scoped_thread const &p) = delete;
 
@@ -72,9 +68,9 @@ class scoped_thread {
 };
 
 void chpater2ex2() {
-//  std::thread t(do_work, 2);
-//  thread_guard guard(t);
-//  thread_guard guard(std::thread(do_work, 2));
+  //  std::thread t(do_work, 2);
+  //  thread_guard guard(t);
+  //  thread_guard guard(std::thread(do_work, 2));
   scoped_thread(std::thread(do_work, 2));
 }
 
@@ -89,6 +85,4 @@ void chpater2ex3() {
   std::cout << res << std::endl;
 }
 
-void chpater2() {
-  chpater2ex3();
-}
+void chpater2() { chpater2ex3(); }

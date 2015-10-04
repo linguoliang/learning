@@ -2,8 +2,8 @@
 // Created by chaomai on 5/26/15.
 //
 
-#ifndef CPPLEARNING_CHPATER4_H
-#define CPPLEARNING_CHPATER4_H
+#ifndef CHPATER4_H
+#define CHPATER4_H
 
 #include <condition_variable>
 #include <mutex>
@@ -129,4 +129,4 @@ std::future<result_of_t<decay_t<F>(decay_t<A>)>> spawn_task(F &&f, A &&a) {
   return res;
 }
 
-#endif //CPPLEARNING_CHPATER4_H
+#endif
