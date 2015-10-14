@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 project(dynamic_programming)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11")
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++11")
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)

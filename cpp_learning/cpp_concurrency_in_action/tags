@@ -36,7 +36,6 @@ CHPATER2_H	src/chpater2.h	6;"	d	language:C++
 CHPATER3_H	src/chpater3.h	6;"	d	language:C++
 CHPATER4_H	src/chpater4.h	6;"	d	language:C++
 CHPATER5_H	src/chpater5.h	6;"	d	language:C++
-CHPATER6_QUEUE_CLASS_H_	src/chpater6_queue_class.h	2;"	d	language:C++
 CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/chaomai\/Documents\/Codes\/Current\/GitHub\/learning\/cpp_learning\/cpp_concurrency_in_action\/build$/;"	m	language:Make
 CMAKE_COMMAND	build/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m	language:Make
 CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/chaomai\/Documents\/Codes\/Current\/GitHub\/learning\/cpp_learning\/cpp_concurrency_in_action$/;"	m	language:Make
@@ -249,6 +248,7 @@ COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.c
 DEC	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	418;"	d	language:C	file:
 DEC	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	413;"	d	language:C++	file:
 EQUALS	build/Makefile	/^EQUALS = =$/;"	m	language:Make
+Foo	src/chpater5.cc	/^  class Foo { };$/;"	c	language:C++	file:
 HEX	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	429;"	d	language:C	file:
 HEX	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	424;"	d	language:C++	file:
 ID_VOID_MAIN	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	language:C	file:
@@ -341,72 +341,201 @@ STRINGIFY_HELPER	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	262
 SUFFIXES	build/Makefile	/^SUFFIXES =$/;"	m	language:Make
 UTILS_H	src/utils.h	6;"	d	language:C++
 X	src/chpater2.cc	/^class X {$/;"	c	language:C++	file:
-X	src/chpater3.cc	/^  X(some_big_object const &sd) : some_detail(sd) {}$/;"	f	language:C++	class:X
+X	src/chpater3.cc	/^  X(some_big_object const &sd) : some_detail(sd) {}$/;"	f	language:C++	class:X	access:public	signature:(some_big_object const &sd)
 X	src/chpater3.cc	/^class X {$/;"	c	language:C++	file:
-X1	src/chpater3.cc	/^  X1(some_big_object const &sd) : some_detail(sd) {}$/;"	f	language:C++	class:X1
+X1	src/chpater3.cc	/^  X1(some_big_object const &sd) : some_detail(sd) {}$/;"	f	language:C++	class:X1	access:public	signature:(some_big_object const &sd)
 X1	src/chpater3.cc	/^class X1 {$/;"	c	language:C++	file:
+X1::X1	src/chpater3.cc	/^  X1(some_big_object const &sd) : some_detail(sd) {}$/;"	f	language:C++	class:X1	access:public	signature:(some_big_object const &sd)
+X1::lock_b	src/chpater3.cc	/^    std::unique_lock<std::mutex> lock_b(lhs.m, std::defer_lock);$/;"	p	language:C++	file:	signature:(lhs.m, std::defer_lock)
+X1::m	src/chpater3.cc	/^  std::mutex m;$/;"	m	language:C++	class:X1	file:	access:private
+X1::some_detail	src/chpater3.cc	/^  some_big_object some_detail;$/;"	m	language:C++	class:X1	file:	access:private
+X1::std::lock	src/chpater3.cc	/^    std::lock(lock_a, lock_b);$/;"	p	language:C++	class:X1::std	file:	signature:(lock_a, lock_b)
+X1::swap1	src/chpater3.cc	/^  friend void swap1(X1 &lhs, X1 &rhs) {$/;"	f	language:C++	class:X1	access:friend	signature:(X1 &lhs, X1 &rhs)
+X::X	src/chpater3.cc	/^  X(some_big_object const &sd) : some_detail(sd) {}$/;"	f	language:C++	class:X	access:public	signature:(some_big_object const &sd)
+X::do_work	src/chpater2.cc	/^  void do_work(int a) { std::cout << a << std::endl; };$/;"	f	language:C++	class:X	access:public	signature:(int a)
+X::lock_a	src/chpater3.cc	/^    std::lock_guard<std::mutex> lock_a(lhs.m, std::adopt_lock);$/;"	p	language:C++	file:	signature:(lhs.m, std::adopt_lock)
+X::lock_b	src/chpater3.cc	/^    std::lock_guard<std::mutex> lock_b(rhs.m, std::adopt_lock);$/;"	p	language:C++	file:	signature:(rhs.m, std::adopt_lock)
+X::m	src/chpater3.cc	/^  std::mutex m;$/;"	m	language:C++	class:X	file:	access:private
+X::some_detail	src/chpater3.cc	/^  some_big_object some_detail;$/;"	m	language:C++	class:X	file:	access:private
+X::std::endl	src/chpater2.cc	/^  void do_work(int a) { std::cout << a << std::endl; };$/;"	m	language:C++	class:X::std	file:
+X::swap	src/chpater3.cc	/^  friend void swap(X &lhs, X &rhs) {$/;"	f	language:C++	class:X	access:friend	signature:(X &lhs, X &rhs)
+a	src/chpater2.cc	/^    int a = 0;$/;"	l	language:C++
+a	src/chpater4.cc	/^    int a = 0;$/;"	l	language:C++
+a	src/chpater4.cc	/^  auto a = std::chrono::system_clock::now();$/;"	l	language:C++
+a	src/chpater4.cc	/^  std::list<int> a = {1, 2, 3, 4, 5};$/;"	l	language:C++
+a	src/chpater5.cc	/^  data a;$/;"	l	language:C++
+a	src/chpater5.cc	/^  int a = 0;$/;"	l	language:C++
 accumulate_block	src/chpater2.h	/^struct accumulate_block {$/;"	s	language:C++
-add_to_list	src/chpater3.cc	/^void add_to_list(int new_value) {$/;"	f	language:C++
-chapter3ex3	src/chpater3.cc	/^void chapter3ex3() {$/;"	f	language:C++
-chapter3ex4	src/chpater3.cc	/^void chapter3ex4() {$/;"	f	language:C++
-chapter3ex5	src/chpater3.cc	/^void chapter3ex5() {$/;"	f	language:C++
-chapter3ex6	src/chpater3.cc	/^void chapter3ex6() {$/;"	f	language:C++
-chapter3ex7	src/chpater3.cc	/^void chapter3ex7() {$/;"	f	language:C++
-chapter3ex8	src/chpater3.cc	/^void chapter3ex8() {$/;"	f	language:C++
-chapter3ex9	src/chpater3.cc	/^void chapter3ex9() {$/;"	f	language:C++
-check_for_hierarchy_violation	src/chpater3.h	/^  void check_for_hierarchy_violation() {$/;"	f	language:C++	class:hierarchical_mutex
-chpater1	src/chpater1.cc	/^void chpater1() {$/;"	f	language:C++
-chpater2	src/chpater2.cc	/^void chpater2() { chpater2ex3(); }$/;"	f	language:C++
-chpater2ex1	src/chpater2.cc	/^void chpater2ex1() {$/;"	f	language:C++
-chpater2ex2	src/chpater2.cc	/^void chpater2ex2() {$/;"	f	language:C++
-chpater2ex3	src/chpater2.cc	/^void chpater2ex3() {$/;"	f	language:C++
-chpater3	src/chpater3.cc	/^void chpater3() {$/;"	f	language:C++
-chpater3ex1	src/chpater3.cc	/^void chpater3ex1() {$/;"	f	language:C++
-chpater3ex10	src/chpater3.cc	/^void chpater3ex10() {$/;"	f	language:C++
-chpater3ex11	src/chpater3.cc	/^void chpater3ex11() {$/;"	f	language:C++
-chpater3ex2	src/chpater3.cc	/^void chpater3ex2() {$/;"	f	language:C++
-chpater3ex9	src/chpater3.cc	/^void chpater3ex9() {$/;"	f	language:C++
-chpater4	src/chpater4.cc	/^void chpater4() {$/;"	f	language:C++
-chpater4ex1	src/chpater4.cc	/^void chpater4ex1() {$/;"	f	language:C++
-chpater4ex10	src/chpater4.cc	/^void chpater4ex10() {$/;"	f	language:C++
-chpater4ex11	src/chpater4.cc	/^void chpater4ex11() {$/;"	f	language:C++
-chpater4ex12	src/chpater4.cc	/^void chpater4ex12() {$/;"	f	language:C++
-chpater4ex13	src/chpater4.cc	/^void chpater4ex13() {$/;"	f	language:C++
-chpater4ex14	src/chpater4.cc	/^void chpater4ex14(){$/;"	f	language:C++
-chpater4ex2	src/chpater4.cc	/^void chpater4ex2() {$/;"	f	language:C++
-chpater4ex3	src/chpater4.cc	/^void chpater4ex3() {$/;"	f	language:C++
-chpater4ex4	src/chpater4.cc	/^void chpater4ex4() {$/;"	f	language:C++
-chpater4ex5	src/chpater4.cc	/^void chpater4ex5() {$/;"	f	language:C++
-chpater4ex6	src/chpater4.cc	/^void chpater4ex6() {$/;"	f	language:C++
-chpater4ex7	src/chpater4.cc	/^void chpater4ex7() {$/;"	f	language:C++
-chpater4ex8	src/chpater4.cc	/^void chpater4ex8() {$/;"	f	language:C++
-chpater4ex9	src/chpater4.cc	/^void chpater4ex9() {$/;"	f	language:C++
-chpater5	src/chpater5.cc	/^void chpater5() {$/;"	f	language:C++
-chpater5ex1	src/chpater5.cc	/^void chpater5ex1() {$/;"	f	language:C++
-chpater5ex2	src/chpater5.cc	/^void chpater5ex2() {$/;"	f	language:C++
-chpater5ex3	src/chpater5.cc	/^void chpater5ex3() {$/;"	f	language:C++
-chpater5ex4	src/chpater5.cc	/^void chpater5ex4() {$/;"	f	language:C++
-chpater5ex5	src/chpater5.cc	/^void chpater5ex5() {$/;"	f	language:C++
-chpater5ex6	src/chpater5.cc	/^void chpater5ex6() {$/;"	f	language:C++
-chpater5ex7	src/chpater5.cc	/^void chpater5ex7() {$/;"	f	language:C++
-chpater5ex8	src/chpater5.cc	/^void chpater5ex8(){$/;"	f	language:C++
-chpater6	src/chpater6.cc	/^void chpater6() {}$/;"	f	language:C++
-data	src/chpater3.h	/^  std::stack<T> data;$/;"	m	language:C++	class:threadsafe_stack
-data_cond	src/chpater4.h	/^  std::condition_variable data_cond;$/;"	m	language:C++	class:threadsafe_queue
-data_queue	src/chpater4.h	/^  std::queue<T> data_queue;$/;"	m	language:C++	class:threadsafe_queue
-do_work	src/chpater2.cc	/^  void do_work(int a) { std::cout << a << std::endl; };$/;"	f	language:C++	class:X
-do_work	src/chpater2.cc	/^void do_work(double data) {$/;"	f	language:C++
-empty	src/chpater3.h	/^  bool empty() const {$/;"	f	language:C++	class:threadsafe_stack
-empty_stack	src/chpater3.h	/^struct empty_stack : std::exception {$/;"	s	language:C++
+accumulate_block::operator ()	src/chpater2.h	/^  void operator()(Iterator first, Iterator last, T &result) {$/;"	f	language:C++	struct:accumulate_block	access:public	signature:(Iterator first, Iterator last, T &result)
+add_to_list	src/chpater3.cc	/^void add_to_list(int new_value) {$/;"	f	language:C++	signature:(int new_value)
+advance	src/chpater2.h	/^    std::advance(block_end, block_size);$/;"	p	language:C++	class:std	signature:(block_end, block_size)
+async	src/chpater4.h	/^      std::async(std::launch::async, &parallel_quick_sort < T > ,$/;"	p	language:C++	signature:(std::launch::async, &parallel_quick_sort < T > , std::move(lower_part))
+b	src/chpater4.cc	/^  auto b = std::chrono::time_point_cast<std::chrono::hours>(a);$/;"	l	language:C++
+b	src/chpater4.cc	/^  std::list<int> b = {10, 11, 12, 13, 14};$/;"	l	language:C++
+b	src/chpater5.cc	/^  int b = 1000;$/;"	l	language:C++
+b	src/chpater5.cc	/^  int b;$/;"	l	language:C++
+b	src/chpater5.cc	/^  std::atomic<bool> b;$/;"	l	language:C++
+bf1	src/chpater5.cc	/^    unsigned bf1:10;$/;"	m	language:C++	struct:data	file:	access:public
+bf2	src/chpater5.cc	/^    int bf2:25;$/;"	m	language:C++	struct:data	file:	access:public
+bf4	src/chpater5.cc	/^    int bf4:9;$/;"	m	language:C++	struct:data	file:	access:public
+block_end	src/chpater2.h	/^    Iterator block_end = block_start;$/;"	l	language:C++
+block_size	src/chpater2.h	/^  unsigned long const block_size = length \/ num_threads;$/;"	l	language:C++
+block_start	src/chpater2.h	/^  Iterator block_start = first;$/;"	l	language:C++
+c1	src/chpater5.cc	/^    char c1, c2;$/;"	m	language:C++	struct:data	file:	access:public
+c2	src/chpater5.cc	/^    char c1, c2;$/;"	m	language:C++	struct:data	file:	access:public
+chapter3ex3	src/chpater3.cc	/^void chapter3ex3() {$/;"	f	language:C++	signature:()
+chapter3ex4	src/chpater3.cc	/^void chapter3ex4() {$/;"	f	language:C++	signature:()
+chapter3ex5	src/chpater3.cc	/^void chapter3ex5() {$/;"	f	language:C++	signature:()
+chapter3ex6	src/chpater3.cc	/^void chapter3ex6() {$/;"	f	language:C++	signature:()
+chapter3ex7	src/chpater3.cc	/^void chapter3ex7() {$/;"	f	language:C++	signature:()
+chapter3ex8	src/chpater3.cc	/^void chapter3ex8() {$/;"	f	language:C++	signature:()
+chapter3ex9	src/chpater3.cc	/^void chapter3ex9() {$/;"	f	language:C++	signature:()
+check_for_hierarchy_violation	src/chpater3.h	/^  void check_for_hierarchy_violation() {$/;"	f	language:C++	class:hierarchical_mutex	access:private	signature:()
+chpater1	src/chpater1.cc	/^void chpater1() {$/;"	f	language:C++	signature:()
+chpater1	src/chpater1.h	/^void chpater1();$/;"	p	language:C++	signature:()
+chpater2	src/chpater2.cc	/^void chpater2() { chpater2ex3(); }$/;"	f	language:C++	signature:()
+chpater2	src/chpater2.h	/^void chpater2();$/;"	p	language:C++	signature:()
+chpater2ex1	src/chpater2.cc	/^void chpater2ex1() {$/;"	f	language:C++	signature:()
+chpater2ex2	src/chpater2.cc	/^void chpater2ex2() {$/;"	f	language:C++	signature:()
+chpater2ex3	src/chpater2.cc	/^void chpater2ex3() {$/;"	f	language:C++	signature:()
+chpater3	src/chpater3.cc	/^void chpater3() {$/;"	f	language:C++	signature:()
+chpater3	src/chpater3.h	/^void chpater3();$/;"	p	language:C++	signature:()
+chpater3ex1	src/chpater3.cc	/^void chpater3ex1() {$/;"	f	language:C++	signature:()
+chpater3ex10	src/chpater3.cc	/^void chpater3ex10() {$/;"	f	language:C++	signature:()
+chpater3ex11	src/chpater3.cc	/^void chpater3ex11() {$/;"	f	language:C++	signature:()
+chpater3ex2	src/chpater3.cc	/^void chpater3ex2() {$/;"	f	language:C++	signature:()
+chpater3ex9	src/chpater3.cc	/^void chpater3ex9() {$/;"	f	language:C++	signature:()
+chpater4	src/chpater4.cc	/^void chpater4() {$/;"	f	language:C++	signature:()
+chpater4	src/chpater4.h	/^void chpater4();$/;"	p	language:C++	signature:()
+chpater4ex1	src/chpater4.cc	/^void chpater4ex1() {$/;"	f	language:C++	signature:()
+chpater4ex10	src/chpater4.cc	/^void chpater4ex10() {$/;"	f	language:C++	signature:()
+chpater4ex11	src/chpater4.cc	/^void chpater4ex11() {$/;"	f	language:C++	signature:()
+chpater4ex12	src/chpater4.cc	/^void chpater4ex12() {$/;"	f	language:C++	signature:()
+chpater4ex13	src/chpater4.cc	/^void chpater4ex13() {$/;"	f	language:C++	signature:()
+chpater4ex14	src/chpater4.cc	/^void chpater4ex14(){$/;"	f	language:C++	signature:()
+chpater4ex2	src/chpater4.cc	/^void chpater4ex2() {$/;"	f	language:C++	signature:()
+chpater4ex3	src/chpater4.cc	/^void chpater4ex3() {$/;"	f	language:C++	signature:()
+chpater4ex4	src/chpater4.cc	/^void chpater4ex4() {$/;"	f	language:C++	signature:()
+chpater4ex5	src/chpater4.cc	/^void chpater4ex5() {$/;"	f	language:C++	signature:()
+chpater4ex6	src/chpater4.cc	/^void chpater4ex6() {$/;"	f	language:C++	signature:()
+chpater4ex7	src/chpater4.cc	/^void chpater4ex7() {$/;"	f	language:C++	signature:()
+chpater4ex8	src/chpater4.cc	/^void chpater4ex8() {$/;"	f	language:C++	signature:()
+chpater4ex9	src/chpater4.cc	/^void chpater4ex9() {$/;"	f	language:C++	signature:()
+chpater5	src/chpater5.cc	/^void chpater5() {$/;"	f	language:C++	signature:()
+chpater5	src/chpater5.h	/^void chpater5();$/;"	p	language:C++	signature:()
+chpater5ex1	src/chpater5.cc	/^void chpater5ex1() {$/;"	f	language:C++	signature:()
+chpater5ex1	src/chpater5.cc	/^void chpater5ex1(void);$/;"	p	language:C++	file:	signature:(void)
+chpater5ex2	src/chpater5.cc	/^void chpater5ex2() {$/;"	f	language:C++	signature:()
+chpater5ex2	src/chpater5.cc	/^void chpater5ex2(void);$/;"	p	language:C++	file:	signature:(void)
+chpater5ex3	src/chpater5.cc	/^void chpater5ex3() {$/;"	f	language:C++	signature:()
+chpater5ex3	src/chpater5.cc	/^void chpater5ex3(void);$/;"	p	language:C++	file:	signature:(void)
+chpater5ex4	src/chpater5.cc	/^void chpater5ex4() {$/;"	f	language:C++	signature:()
+chpater5ex4	src/chpater5.cc	/^void chpater5ex4(void);$/;"	p	language:C++	file:	signature:(void)
+chpater5ex5	src/chpater5.cc	/^void chpater5ex5() {$/;"	f	language:C++	signature:()
+chpater5ex5	src/chpater5.cc	/^void chpater5ex5(void);$/;"	p	language:C++	file:	signature:(void)
+chpater5ex6	src/chpater5.cc	/^void chpater5ex6() {$/;"	f	language:C++	signature:()
+chpater5ex6	src/chpater5.cc	/^void chpater5ex6(void);$/;"	p	language:C++	file:	signature:(void)
+chpater5ex7	src/chpater5.cc	/^void chpater5ex7() {$/;"	f	language:C++	signature:()
+chpater5ex7	src/chpater5.cc	/^void chpater5ex7(void);$/;"	p	language:C++	file:	signature:(void)
+chpater5ex8	src/chpater5.cc	/^void chpater5ex8(){$/;"	f	language:C++	signature:()
+chpater5ex8	src/chpater5.cc	/^void chpater5ex8(void);$/;"	p	language:C++	file:	signature:(void)
+chpater6	src/chpater6.cc	/^void chpater6() {}$/;"	f	language:C++	signature:()
+chpater6	src/chpater6.h	/^void chpater6();$/;"	p	language:C++	signature:()
+clear	src/chpater5.h	/^  void unlock() { flag.clear(std::memory_order_release); }$/;"	p	language:C++	signature:(std::memory_order_release)
+d	src/chpater5.cc	/^    double d;$/;"	m	language:C++	struct:data	file:	access:public
+data	src/chpater2.cc	/^  double data = 1.0;$/;"	l	language:C++
+data	src/chpater3.h	/^  std::stack<T> data;$/;"	m	language:C++	class:threadsafe_stack	access:private
+data	src/chpater5.cc	/^  struct data {$/;"	s	language:C++	file:
+data::bf1	src/chpater5.cc	/^    unsigned bf1:10;$/;"	m	language:C++	struct:data	file:	access:public
+data::bf2	src/chpater5.cc	/^    int bf2:25;$/;"	m	language:C++	struct:data	file:	access:public
+data::bf4	src/chpater5.cc	/^    int bf4:9;$/;"	m	language:C++	struct:data	file:	access:public
+data::c1	src/chpater5.cc	/^    char c1, c2;$/;"	m	language:C++	struct:data	file:	access:public
+data::c2	src/chpater5.cc	/^    char c1, c2;$/;"	m	language:C++	struct:data	file:	access:public
+data::d	src/chpater5.cc	/^    double d;$/;"	m	language:C++	struct:data	file:	access:public
+data::i	src/chpater5.cc	/^    int i;$/;"	m	language:C++	struct:data	file:	access:public
+data::s	src/chpater5.cc	/^    std::string s;$/;"	m	language:C++	struct:data	file:	access:public
+data_cond	src/chpater4.h	/^  std::condition_variable data_cond;$/;"	m	language:C++	class:threadsafe_queue	access:private
+data_preparation_thread	src/chpater4.cc	/^  auto data_preparation_thread = [&]() {$/;"	l	language:C++
+data_processing_thread	src/chpater4.cc	/^  auto data_processing_thread = [&]() {$/;"	l	language:C++
+data_queue	src/chpater4.cc	/^  threadsafe_queue<int> data_queue;$/;"	l	language:C++
+data_queue	src/chpater4.h	/^  std::queue<T> data_queue;$/;"	m	language:C++	class:threadsafe_queue	access:private
+detach	src/chpater4.h	/^  t.detach();$/;"	p	language:C++	signature:()
+divide_point	src/chpater4.h	/^  auto divide_point = std::partition(input.begin(), input.end(),$/;"	l	language:C++
+do_low_level_stuff	src/chpater3.cc	/^  auto do_low_level_stuff = []() -> int {$/;"	l	language:C++
+do_other_stuff	src/chpater3.cc	/^  auto do_other_stuff = []() { std::cout << "do other stuff" << std::endl; };$/;"	l	language:C++
+do_work	src/chpater2.cc	/^  void do_work(int a) { std::cout << a << std::endl; };$/;"	f	language:C++	class:X	access:public	signature:(int a)
+do_work	src/chpater2.cc	/^void do_work(double data) {$/;"	f	language:C++	signature:(double data)
+empty	src/chpater3.h	/^  bool empty() const {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:() const
+empty_stack	src/chpater3.h	/^struct empty_stack : std::exception {$/;"	s	language:C++	inherits:std::exception
+empty_stack::what	src/chpater3.h	/^  const char *what() const throw();$/;"	p	language:C++	struct:empty_stack	access:public	signature:() const
+endl	src/chpater1.cc	/^    std::cout << "func" << std::endl;$/;"	m	language:C++	class:func::std	file:
+endl	src/chpater1.cc	/^  std::cout << "chpater 1" << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater1.cc	/^  std::cout << t.joinable() << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater1.cc	/^void hello() { std::cout << "Hello Concurrent World" << std::endl; }$/;"	m	language:C++	class:std	file:
+endl	src/chpater2.cc	/^  std::cout << data << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater2.cc	/^  std::cout << res << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater2.cc	/^  void do_work(int a) { std::cout << a << std::endl; };$/;"	m	language:C++	class:X::std	file:
+endl	src/chpater3.cc	/^  std::cout << mutex1.try_lock() << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater3.cc	/^  std::cout << res << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater4.cc	/^  std::cout << "futuring..." << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater4.cc	/^  std::cout << fu.get() << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater4.cc	/^  std::cout << res.get() << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater4.cc	/^  std::cout << the_answer.get() << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater4.h	/^  std::cout << std::endl;$/;"	m	language:C++	class:std
+endl	src/chpater5.cc	/^  std::cout << a << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater5.cc	/^  std::cout << b.is_lock_free() << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater5.cc	/^  std::cout << c << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater5.cc	/^  std::cout << p << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/chpater5.cc	/^  std::cout << z << std::endl;$/;"	m	language:C++	class:std	file:
+endl	src/utils.h	/^                     .count() << std::endl;$/;"	m	language:C++	class:timer::std
+expected	src/chpater5.cc	/^  bool expected = false;$/;"	l	language:C++
+f	src/chpater4.cc	/^  auto f = [](int b) {$/;"	l	language:C++
+f	src/chpater5.cc	/^  std::atomic_flag f = ATOMIC_FLAG_INIT;$/;"	l	language:C++
+f1	src/chpater3.cc	/^  auto f1 = [](std::thread t2) { t2.join(); };$/;"	l	language:C++
+f1	src/chpater4.cc	/^  auto f1 = [&]() {$/;"	l	language:C++
+f1	src/chpater5.cc	/^  auto f1 = [&]() {$/;"	l	language:C++
+f2	src/chpater3.cc	/^  auto f2 = [](std::thread t1) { t1.join(); };$/;"	l	language:C++
+f2	src/chpater4.cc	/^  auto f2 = [&](int (*f)(int)) {$/;"	l	language:C++
+f2	src/chpater5.cc	/^  auto f2 = [&]() {$/;"	l	language:C++
 features	build/CMakeFiles/feature_tests.c	/^  const char features[] = {""$/;"	v	language:C
 features	build/CMakeFiles/feature_tests.cxx	/^  const char features[] = {""$/;"	v	language:C++
-flag	src/chpater5.h	/^  std::atomic_flag flag;$/;"	m	language:C++	class:spinlock_mutex
+flag	src/chpater5.h	/^  std::atomic_flag flag;$/;"	m	language:C++	class:spinlock_mutex	access:private
+for_each	src/chpater2.h	/^  std::for_each(threads.begin(), threads.end(),$/;"	p	language:C++	class:std	signature:(threads.begin(), threads.end(), std::mem_fn(&std::thread::join))
+for_each	src/chpater3.cc	/^  std::for_each(ts.begin(), ts.end(), std::mem_fn(&std::thread::join));$/;"	p	language:C++	class:std	file:	signature:(ts.begin(), ts.end(), std::mem_fn(&std::thread::join))
+for_each	src/chpater4.cc	/^  std::for_each(ts.begin(), ts.end(), std::mem_fn(&std::thread::join));$/;"	p	language:C++	class:std	file:	signature:(ts.begin(), ts.end(), std::mem_fn(&std::thread::join))
+forward	src/chpater4.h	/^  std::thread t(std::move(task), std::forward<A>(a));$/;"	p	language:C++	class:std	signature:(a)
+fu	src/chpater4.cc	/^  auto fu = p.get_future();$/;"	l	language:C++
 func	src/chpater1.cc	/^struct func {$/;"	s	language:C++	file:
-get_huge_list	src/chpater4.cc	/^std::list<long> get_huge_list() {$/;"	f	language:C++
-hello	src/chpater1.cc	/^void hello() { std::cout << "Hello Concurrent World" << std::endl; }$/;"	f	language:C++
-hierarchical_mutex	src/chpater3.h	/^  explicit hierarchical_mutex(unsigned long value)$/;"	f	language:C++	class:hierarchical_mutex
+func1	src/chpater3.cc	/^  auto func1 = [&mutex, &mutex1, &res]() {$/;"	l	language:C++
+func1	src/chpater3.cc	/^  auto func1 = [&mutex, &mutex1]() {$/;"	l	language:C++
+func2	src/chpater3.cc	/^  auto func2 = [&mutex, &mutex1, &res]() {$/;"	l	language:C++
+func2	src/chpater3.cc	/^  auto func2 = [&mutex, &mutex1]() {$/;"	l	language:C++
+func::operator ()	src/chpater1.cc	/^  void operator()() {$/;"	f	language:C++	struct:func	access:public	signature:()
+func::std::endl	src/chpater1.cc	/^    std::cout << "func" << std::endl;$/;"	m	language:C++	class:func::std	file:
+get_huge_list	src/chpater4.cc	/^std::list<long> get_huge_list() {$/;"	f	language:C++	signature:()
+guard	src/chpater3.cc	/^  std::lock_guard<std::mutex> guard(some_mutex);$/;"	p	language:C++	file:	signature:(some_mutex)
+hardware_threads	src/chpater2.h	/^  unsigned long const hardware_threads = std::thread::hardware_concurrency();$/;"	l	language:C++
+hello	src/chpater1.cc	/^void hello() { std::cout << "Hello Concurrent World" << std::endl; }$/;"	f	language:C++	signature:()
+hierarchical_mutex	src/chpater3.h	/^  explicit hierarchical_mutex(unsigned long value)$/;"	f	language:C++	class:hierarchical_mutex	access:public	signature:(unsigned long value)
 hierarchical_mutex	src/chpater3.h	/^class hierarchical_mutex {$/;"	c	language:C++
-hierarchy_value	src/chpater3.h	/^  unsigned long const hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex
+hierarchical_mutex::check_for_hierarchy_violation	src/chpater3.h	/^  void check_for_hierarchy_violation() {$/;"	f	language:C++	class:hierarchical_mutex	access:private	signature:()
+hierarchical_mutex::hierarchical_mutex	src/chpater3.h	/^  explicit hierarchical_mutex(unsigned long value)$/;"	f	language:C++	class:hierarchical_mutex	access:public	signature:(unsigned long value)
+hierarchical_mutex::hierarchy_value	src/chpater3.h	/^  unsigned long const hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex	access:private
+hierarchical_mutex::internal_mutex	src/chpater3.h	/^  std::mutex internal_mutex;$/;"	m	language:C++	class:hierarchical_mutex	access:private
+hierarchical_mutex::lock	src/chpater3.h	/^    internal_mutex.lock();$/;"	p	language:C++	signature:()
+hierarchical_mutex::lock	src/chpater3.h	/^  void lock() {$/;"	f	language:C++	class:hierarchical_mutex	access:public	signature:()
+hierarchical_mutex::previous_hierarchy_value	src/chpater3.h	/^  unsigned long previous_hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex	access:private
+hierarchical_mutex::this_thread_hierarchy_value	src/chpater3.cc	/^thread_local unsigned long hierarchical_mutex::this_thread_hierarchy_value($/;"	p	language:C++	class:hierarchical_mutex	file:	signature:( ULONG_MAX)
+hierarchical_mutex::this_thread_hierarchy_value	src/chpater3.h	/^  static thread_local unsigned long this_thread_hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex	access:private
+hierarchical_mutex::try_lock	src/chpater3.h	/^  bool try_lock() {$/;"	f	language:C++	class:hierarchical_mutex	access:public	signature:()
+hierarchical_mutex::unlock	src/chpater3.h	/^    internal_mutex.unlock();$/;"	p	language:C++	signature:()
+hierarchical_mutex::unlock	src/chpater3.h	/^  void unlock() {$/;"	f	language:C++	class:hierarchical_mutex	access:public	signature:()
+hierarchical_mutex::update_hierarchy_value	src/chpater3.h	/^  void update_hierarchy_value() {$/;"	f	language:C++	class:hierarchical_mutex	access:private	signature:()
+hierarchy_value	src/chpater3.h	/^  unsigned long const hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex	access:private
+high_level_func	src/chpater3.cc	/^  auto high_level_func = [&]() {$/;"	l	language:C++
+high_level_stuff	src/chpater3.cc	/^  auto high_level_stuff = [](int some_param) {$/;"	l	language:C++
+i	src/chpater5.cc	/^    int i;$/;"	m	language:C++	struct:data	file:	access:public
+id	src/chpater2.cc	/^  int id = 1;$/;"	l	language:C++
 info_arch	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	language:C
 info_arch	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	language:C++
 info_compiler	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	language:C
@@ -419,65 +548,259 @@ info_simulate_version	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^ch
 info_simulate_version	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v	language:C++
 info_version	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v	language:C
 info_version	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	language:C++
-internal_mutex	src/chpater3.h	/^  std::mutex internal_mutex;$/;"	m	language:C++	class:hierarchical_mutex
-list_contains	src/chpater3.cc	/^bool list_contains(int value_to_find) {$/;"	f	language:C++
-lock	src/chpater3.h	/^  void lock() {$/;"	f	language:C++	class:hierarchical_mutex
-lock	src/chpater5.h	/^  void lock() {$/;"	f	language:C++	class:spinlock_mutex
-m	src/chpater3.cc	/^  std::mutex m;$/;"	m	language:C++	class:X	file:
-m	src/chpater3.cc	/^  std::mutex m;$/;"	m	language:C++	class:X1	file:
-m	src/chpater3.h	/^  mutable std::mutex m;$/;"	m	language:C++	class:threadsafe_stack
-main	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f	language:C
+internal_mutex	src/chpater3.h	/^  std::mutex internal_mutex;$/;"	m	language:C++	class:hierarchical_mutex	access:private
+join	src/chpater1.cc	/^  t.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater2.cc	/^      t.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater2.cc	/^  t.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater2.cc	/^  ~scoped_thread() { t.join(); }$/;"	p	language:C++	file:	signature:()
+join	src/chpater3.cc	/^  t.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater3.cc	/^  t1.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater3.cc	/^  thread1.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater3.cc	/^  thread2.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater4.cc	/^  t1.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater4.cc	/^  t2.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater5.cc	/^  a.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater5.cc	/^  b.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater5.cc	/^  c.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater5.cc	/^  d.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater5.cc	/^  t1.join();$/;"	p	language:C++	file:	signature:()
+join	src/chpater5.cc	/^  t2.join();$/;"	p	language:C++	file:	signature:()
+length	src/chpater2.h	/^  unsigned long const length = std::distance(first, last);$/;"	l	language:C++
+list_contains	src/chpater3.cc	/^bool list_contains(int value_to_find) {$/;"	f	language:C++	signature:(int value_to_find)
+lk	src/chpater4.h	/^    std::lock_guard<std::mutex> lk(mut);$/;"	p	language:C++	signature:(mut)
+lk	src/chpater4.h	/^    std::unique_lock<std::mutex> lk(mut);$/;"	p	language:C++	signature:(mut)
+lock	src/chpater3.cc	/^    mutex1.lock();$/;"	p	language:C++	file:	signature:()
+lock	src/chpater3.cc	/^    mutex2.lock();$/;"	p	language:C++	file:	signature:()
+lock	src/chpater3.cc	/^    std::lock(lock_a, lock_b);$/;"	p	language:C++	class:X1::std	file:	signature:(lock_a, lock_b)
+lock	src/chpater3.cc	/^  mutex1.lock();$/;"	p	language:C++	file:	signature:()
+lock	src/chpater3.h	/^    internal_mutex.lock();$/;"	p	language:C++	signature:()
+lock	src/chpater3.h	/^    std::lock_guard<std::mutex> lock(m);$/;"	p	language:C++	signature:(m)
+lock	src/chpater3.h	/^    std::lock_guard<std::mutex> lock(other.m);$/;"	p	language:C++	signature:(other.m)
+lock	src/chpater3.h	/^  void lock() {$/;"	f	language:C++	class:hierarchical_mutex	access:public	signature:()
+lock	src/chpater4.cc	/^  ul.lock();$/;"	p	language:C++	file:	signature:()
+lock	src/chpater5.h	/^  void lock() {$/;"	f	language:C++	class:spinlock_mutex	access:public	signature:()
+lock_a	src/chpater3.cc	/^    std::lock_guard<std::mutex> lock_a(lhs.m, std::adopt_lock);$/;"	p	language:C++	file:	signature:(lhs.m, std::adopt_lock)
+lock_b	src/chpater3.cc	/^    std::lock_guard<std::mutex> lock_b(rhs.m, std::adopt_lock);$/;"	p	language:C++	file:	signature:(rhs.m, std::adopt_lock)
+lock_b	src/chpater3.cc	/^    std::unique_lock<std::mutex> lock_b(lhs.m, std::defer_lock);$/;"	p	language:C++	file:	signature:(lhs.m, std::defer_lock)
+low_level_func	src/chpater3.cc	/^  auto low_level_func = [&]() -> int {$/;"	l	language:C++
+lower_part	src/chpater4.h	/^  std::list<T> lower_part;$/;"	l	language:C++
+m	src/chpater3.cc	/^  std::mutex m;$/;"	m	language:C++	class:X	file:	access:private
+m	src/chpater3.cc	/^  std::mutex m;$/;"	m	language:C++	class:X1	file:	access:private
+m	src/chpater3.h	/^  mutable std::mutex m;$/;"	m	language:C++	class:threadsafe_stack	access:private
+m	src/chpater4.cc	/^  std::mutex m;$/;"	l	language:C++
+main	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f	language:C	signature:(int argc, char* argv[])
 main	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	language:C
-main	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	language:C++
-main	build/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	language:C
-main	build/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	language:C++
-main	src/main.cc	/^int main() {$/;"	f	language:C++
-mut	src/chpater4.h	/^  std::mutex mut;$/;"	m	language:C++	class:threadsafe_queue
-operator ()	src/chpater1.cc	/^  void operator()() {$/;"	f	language:C++	struct:func
-operator ()	src/chpater2.h	/^  void operator()(Iterator first, Iterator last, T &result) {$/;"	f	language:C++	struct:accumulate_block
-p	src/chpater2.cc	/^  scoped_thread(scoped_thread const &p) = delete;$/;"	m	language:C++	class:scoped_thread	file:
-p	src/chpater2.cc	/^  thread_guard(thread_guard const &p) = delete;$/;"	m	language:C++	class:thread_guard	file:
-parallel_accumulate	src/chpater2.h	/^T parallel_accumulate(Iterator first, Iterator last, T init) {$/;"	f	language:C++
-parallel_quick_sort	src/chpater4.h	/^std::list<T> parallel_quick_sort(std::list<T> input) {$/;"	f	language:C++
-pop	src/chpater3.h	/^  std::shared_ptr<T> pop() {$/;"	f	language:C++	class:threadsafe_stack
-pop	src/chpater3.h	/^  void pop(T &value) {$/;"	f	language:C++	class:threadsafe_stack
-previous_hierarchy_value	src/chpater3.h	/^  unsigned long previous_hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex
-print_list	src/chpater4.h	/^void print_list(std::list<T> input) {$/;"	f	language:C++
-push	src/chpater3.h	/^  void push(T new_value) {$/;"	f	language:C++	class:threadsafe_stack
-push	src/chpater4.h	/^  void push(T new_value) {$/;"	f	language:C++	class:threadsafe_queue
+main	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	language:C++	signature:(int argc, char* argv[])
+main	build/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	language:C	signature:(int argc, char** argv)
+main	build/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	language:C++	signature:(int argc, char** argv)
+main	src/main.cc	/^int main() {$/;"	f	language:C++	signature:()
+make_shared	src/chpater3.h	/^    std::shared_ptr<T> const res(std::make_shared<T>(data.top()));$/;"	p	language:C++	class:threadsafe_stack::std	signature:(data.top())
+max_threads	src/chpater2.h	/^  unsigned long const max_threads =$/;"	l	language:C++
+min_per_thread	src/chpater2.h	/^  unsigned long const min_per_thread = 25;$/;"	l	language:C++
+move	src/chpater4.cc	/^  std::thread t1(std::move(task), 2);$/;"	p	language:C++	file:	signature:(task)
+move	src/chpater4.h	/^  std::thread t(std::move(task), std::forward<A>(a));$/;"	p	language:C++	signature:(task)
+mut	src/chpater4.h	/^  std::mutex mut;$/;"	m	language:C++	class:threadsafe_queue	access:private
+mutex	src/chpater3.cc	/^  std::mutex mutex;$/;"	l	language:C++
+mutex1	src/chpater3.cc	/^  std::mutex mutex1;$/;"	l	language:C++
+mutex2	src/chpater3.cc	/^  std::mutex mutex2;$/;"	l	language:C++
+my_func	src/chpater1.cc	/^  func my_func;$/;"	l	language:C++
+notify_one	src/chpater4.h	/^    data_cond.notify_one();$/;"	p	language:C++	signature:()
+num_threads	src/chpater2.h	/^  unsigned long const num_threads =$/;"	l	language:C++
+operator ()	src/chpater1.cc	/^  void operator()() {$/;"	f	language:C++	struct:func	access:public	signature:()
+operator ()	src/chpater2.h	/^  void operator()(Iterator first, Iterator last, T &result) {$/;"	f	language:C++	struct:accumulate_block	access:public	signature:(Iterator first, Iterator last, T &result)
+operator =	src/chpater2.cc	/^  scoped_thread &operator=(scoped_thread const &) = delete;$/;"	p	language:C++	class:scoped_thread	file:	access:public	signature:(scoped_thread const &)
+operator =	src/chpater2.cc	/^  thread_guard &operator=(thread_guard const &) = delete;$/;"	p	language:C++	class:thread_guard	file:	access:public	signature:(thread_guard const &)
+operator =	src/chpater3.h	/^  threadsafe_stack &operator=(const threadsafe_stack &) = delete;$/;"	p	language:C++	class:threadsafe_stack	access:public	signature:(const threadsafe_stack &)
+other_stuff	src/chpater3.cc	/^  auto other_stuff = [&]() {$/;"	l	language:C++
+p	src/chpater2.cc	/^  scoped_thread(scoped_thread const &p) = delete;$/;"	m	language:C++	class:scoped_thread	file:	access:public
+p	src/chpater2.cc	/^  thread_guard(thread_guard const &p) = delete;$/;"	m	language:C++	class:thread_guard	file:	access:public
+p	src/chpater4.cc	/^  std::promise<int> p;$/;"	l	language:C++
+p	src/chpater5.cc	/^  std::atomic<Foo *> p(some_array);$/;"	p	language:C++	file:	signature:(some_array)
+parallel_accumulate	src/chpater2.h	/^T parallel_accumulate(Iterator first, Iterator last, T init) {$/;"	f	language:C++	signature:(Iterator first, Iterator last, T init)
+parallel_quick_sort	src/chpater4.h	/^  auto new_higher(parallel_quick_sort(std::move(input)));$/;"	p	language:C++	signature:(std::move(
+parallel_quick_sort	src/chpater4.h	/^std::list<T> parallel_quick_sort(std::list<T> input) {$/;"	f	language:C++	signature:(std::list<T> input)
+pivot	src/chpater4.h	/^  T const &pivot = *result.begin();$/;"	l	language:C++
+pop	src/chpater3.h	/^    data.pop();$/;"	p	language:C++	signature:()
+pop	src/chpater3.h	/^  std::shared_ptr<T> pop() {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:()
+pop	src/chpater3.h	/^  void pop(T &value) {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:(T &value)
+pop	src/chpater4.h	/^    data_queue.pop();$/;"	p	language:C++	signature:()
+pop_front	src/chpater4.cc	/^  res.pop_front();$/;"	p	language:C++	file:	signature:()
+previous_hierarchy_value	src/chpater3.h	/^  unsigned long previous_hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex	access:private
+print_list	src/chpater4.h	/^void print_list(std::list<T> input) {$/;"	f	language:C++	signature:(std::list<T> input)
+push	src/chpater3.h	/^    data.push(new_value);$/;"	p	language:C++	signature:(new_value)
+push	src/chpater3.h	/^  void push(T new_value) {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:(T new_value)
+push	src/chpater4.h	/^    data_queue.push(new_value);$/;"	p	language:C++	signature:(new_value)
+push	src/chpater4.h	/^  void push(T new_value) {$/;"	f	language:C++	class:threadsafe_queue	access:public	signature:(T new_value)
+push_back	src/chpater2.cc	/^    to_add.push_back(i);$/;"	p	language:C++	file:	signature:(i)
+push_back	src/chpater3.cc	/^  some_list.push_back(new_value);$/;"	p	language:C++	file:	signature:(new_value)
+push_back	src/chpater4.cc	/^    res.push_back(i);$/;"	p	language:C++	file:	signature:(i)
 qnxnto	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C
 qnxnto	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C++
-scoped_thread	src/chpater2.cc	/^  explicit scoped_thread(std::thread t_) : t(std::move(t_)) {$/;"	f	language:C++	class:scoped_thread
+require	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l	language:C
+require	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l	language:C++
+res	src/chpater2.cc	/^  int res = 0;$/;"	l	language:C++
+res	src/chpater3.cc	/^  int res = 0;$/;"	l	language:C++
+res	src/chpater4.cc	/^  std::future<int> res = task.get_future();$/;"	l	language:C++
+res	src/chpater4.cc	/^  std::list<int> res;$/;"	l	language:C++
+res	src/chpater4.cc	/^  std::list<long> res;$/;"	l	language:C++
+res	src/chpater4.h	/^  auto res = task.get_future();$/;"	l	language:C++
+res_list	src/chpater4.cc	/^  auto res_list = parallel_quick_sort(get_huge_list());$/;"	l	language:C++
+res_list	src/chpater4.cc	/^  auto res_list = sequential_quick_sort(get_huge_list());$/;"	l	language:C++
+result	src/chpater4.h	/^  std::list<T> result;$/;"	l	language:C++
+results	src/chpater2.h	/^  std::vector<T> results(num_threads);$/;"	p	language:C++	signature:(num_threads)
+s	src/chpater5.cc	/^    std::string s;$/;"	m	language:C++	struct:data	file:	access:public
+scoped_thread	src/chpater2.cc	/^  explicit scoped_thread(std::thread t_) : t(std::move(t_)) {$/;"	f	language:C++	class:scoped_thread	access:public	signature:(std::thread t_)
 scoped_thread	src/chpater2.cc	/^class scoped_thread {$/;"	c	language:C++	file:
-sequential_quick_sort	src/chpater4.h	/^std::list<T> sequential_quick_sort(std::list<T> input) {$/;"	f	language:C++
+scoped_thread::join	src/chpater2.cc	/^  ~scoped_thread() { t.join(); }$/;"	p	language:C++	file:	signature:()
+scoped_thread::operator =	src/chpater2.cc	/^  scoped_thread &operator=(scoped_thread const &) = delete;$/;"	p	language:C++	class:scoped_thread	file:	access:public	signature:(scoped_thread const &)
+scoped_thread::p	src/chpater2.cc	/^  scoped_thread(scoped_thread const &p) = delete;$/;"	m	language:C++	class:scoped_thread	file:	access:public
+scoped_thread::scoped_thread	src/chpater2.cc	/^  explicit scoped_thread(std::thread t_) : t(std::move(t_)) {$/;"	f	language:C++	class:scoped_thread	access:public	signature:(std::thread t_)
+scoped_thread::t	src/chpater2.cc	/^  std::thread t;$/;"	m	language:C++	class:scoped_thread	file:	access:private
+scoped_thread::~scoped_thread	src/chpater2.cc	/^  ~scoped_thread() { t.join(); }$/;"	f	language:C++	class:scoped_thread	access:public	signature:()
+sequential_quick_sort	src/chpater4.h	/^  auto new_higher(sequential_quick_sort(std::move(input)));$/;"	p	language:C++	signature:(std::move(
+sequential_quick_sort	src/chpater4.h	/^  auto new_lower(sequential_quick_sort(std::move(lower_part)));$/;"	p	language:C++	signature:(std::move(
+sequential_quick_sort	src/chpater4.h	/^std::list<T> sequential_quick_sort(std::list<T> input) {$/;"	f	language:C++	signature:(std::list<T> input)
+sm	src/chpater5.cc	/^  spinlock_mutex sm;$/;"	l	language:C++
+sm	src/chpater5.cc	/^  std::mutex sm;$/;"	l	language:C++
+some_array	src/chpater5.cc	/^  Foo some_array[5];$/;"	l	language:C++
 some_big_object	src/chpater3.cc	/^class some_big_object {};$/;"	c	language:C++	file:
-some_detail	src/chpater3.cc	/^  some_big_object some_detail;$/;"	m	language:C++	class:X	file:
-some_detail	src/chpater3.cc	/^  some_big_object some_detail;$/;"	m	language:C++	class:X1	file:
+some_detail	src/chpater3.cc	/^  some_big_object some_detail;$/;"	m	language:C++	class:X	file:	access:private
+some_detail	src/chpater3.cc	/^  some_big_object some_detail;$/;"	m	language:C++	class:X1	file:	access:private
 some_list	src/chpater3.cc	/^std::list<int> some_list;$/;"	v	language:C++
 some_mutex	src/chpater3.cc	/^std::mutex some_mutex;$/;"	v	language:C++
-spawn_task	src/chpater4.h	/^std::future<result_of_t<decay_t<F>(decay_t<A>)>> spawn_task(F &&f, A &&a) {$/;"	f	language:C++
-spinlock_mutex	src/chpater5.h	/^  spinlock_mutex() : flag(ATOMIC_FLAG_INIT) {}$/;"	f	language:C++	class:spinlock_mutex
+spawn_task	src/chpater4.h	/^std::future<result_of_t<decay_t<F>(decay_t<A>)>> spawn_task(F &&f, A &&a) {$/;"	f	language:C++	signature:(F &&f, A &&a)
+spinlock_mutex	src/chpater5.h	/^  spinlock_mutex() : flag(ATOMIC_FLAG_INIT) {}$/;"	f	language:C++	class:spinlock_mutex	access:public	signature:()
 spinlock_mutex	src/chpater5.h	/^class spinlock_mutex {$/;"	c	language:C++
-starting_time	src/utils.h	/^  std::chrono::high_resolution_clock::time_point starting_time;$/;"	m	language:C++	class:timer
-swap	src/chpater3.cc	/^  friend void swap(X &lhs, X &rhs) {$/;"	f	language:C++	class:X
-swap1	src/chpater3.cc	/^  friend void swap1(X1 &lhs, X1 &rhs) {$/;"	f	language:C++	class:X1
-t	src/chpater2.cc	/^  std::thread &t;$/;"	m	language:C++	class:thread_guard	file:
-t	src/chpater2.cc	/^  std::thread t;$/;"	m	language:C++	class:scoped_thread	file:
-this_thread_hierarchy_value	src/chpater3.h	/^  static thread_local unsigned long this_thread_hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex
-thread_guard	src/chpater2.cc	/^  explicit thread_guard(std::thread &t_) : t(t_) {}$/;"	f	language:C++	class:thread_guard
+spinlock_mutex::clear	src/chpater5.h	/^  void unlock() { flag.clear(std::memory_order_release); }$/;"	p	language:C++	signature:(std::memory_order_release)
+spinlock_mutex::flag	src/chpater5.h	/^  std::atomic_flag flag;$/;"	m	language:C++	class:spinlock_mutex	access:private
+spinlock_mutex::lock	src/chpater5.h	/^  void lock() {$/;"	f	language:C++	class:spinlock_mutex	access:public	signature:()
+spinlock_mutex::spinlock_mutex	src/chpater5.h	/^  spinlock_mutex() : flag(ATOMIC_FLAG_INIT) {}$/;"	f	language:C++	class:spinlock_mutex	access:public	signature:()
+spinlock_mutex::unlock	src/chpater5.h	/^  void unlock() { flag.clear(std::memory_order_release); }$/;"	f	language:C++	class:spinlock_mutex	access:public	signature:()
+splice	src/chpater4.cc	/^  res.splice(res.begin(), a);$/;"	p	language:C++	file:	signature:(res.begin(), a)
+splice	src/chpater4.h	/^  lower_part.splice(lower_part.begin(), input, input.begin(),$/;"	p	language:C++	signature:(lower_part.begin(), input, input.begin(), divide_point)
+splice	src/chpater4.h	/^  result.splice(result.begin(), input, input.begin());$/;"	p	language:C++	signature:(result.begin(), input, input.begin())
+splice	src/chpater4.h	/^  result.splice(result.begin(), new_lower);$/;"	p	language:C++	signature:(result.begin(), new_lower)
+splice	src/chpater4.h	/^  result.splice(result.begin(), new_lower.get());$/;"	p	language:C++	signature:(result.begin(), new_lower.get())
+splice	src/chpater4.h	/^  result.splice(result.end(), new_higher);$/;"	p	language:C++	signature:(result.end(), new_higher)
+starting_time	src/utils.h	/^  std::chrono::high_resolution_clock::time_point starting_time;$/;"	m	language:C++	class:timer	access:private
+std::advance	src/chpater2.h	/^    std::advance(block_end, block_size);$/;"	p	language:C++	class:std	signature:(block_end, block_size)
+std::endl	src/chpater1.cc	/^  std::cout << "chpater 1" << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater1.cc	/^  std::cout << t.joinable() << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater1.cc	/^void hello() { std::cout << "Hello Concurrent World" << std::endl; }$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater2.cc	/^  std::cout << data << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater2.cc	/^  std::cout << res << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater3.cc	/^  std::cout << mutex1.try_lock() << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater3.cc	/^  std::cout << res << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater4.cc	/^  std::cout << "futuring..." << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater4.cc	/^  std::cout << fu.get() << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater4.cc	/^  std::cout << res.get() << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater4.cc	/^  std::cout << the_answer.get() << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater4.h	/^  std::cout << std::endl;$/;"	m	language:C++	class:std
+std::endl	src/chpater5.cc	/^  std::cout << a << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater5.cc	/^  std::cout << b.is_lock_free() << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater5.cc	/^  std::cout << c << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater5.cc	/^  std::cout << p << std::endl;$/;"	m	language:C++	class:std	file:
+std::endl	src/chpater5.cc	/^  std::cout << z << std::endl;$/;"	m	language:C++	class:std	file:
+std::for_each	src/chpater2.h	/^  std::for_each(threads.begin(), threads.end(),$/;"	p	language:C++	class:std	signature:(threads.begin(), threads.end(), std::mem_fn(&std::thread::join))
+std::for_each	src/chpater3.cc	/^  std::for_each(ts.begin(), ts.end(), std::mem_fn(&std::thread::join));$/;"	p	language:C++	class:std	file:	signature:(ts.begin(), ts.end(), std::mem_fn(&std::thread::join))
+std::for_each	src/chpater4.cc	/^  std::for_each(ts.begin(), ts.end(), std::mem_fn(&std::thread::join));$/;"	p	language:C++	class:std	file:	signature:(ts.begin(), ts.end(), std::mem_fn(&std::thread::join))
+std::forward	src/chpater4.h	/^  std::thread t(std::move(task), std::forward<A>(a));$/;"	p	language:C++	class:std	signature:(a)
+swap	src/chpater3.cc	/^  friend void swap(X &lhs, X &rhs) {$/;"	f	language:C++	class:X	access:friend	signature:(X &lhs, X &rhs)
+swap	src/chpater3.cc	/^void swap(some_big_object &lhs, some_big_object &rhs);$/;"	p	language:C++	file:	signature:(some_big_object &lhs, some_big_object &rhs)
+swap1	src/chpater3.cc	/^  friend void swap1(X1 &lhs, X1 &rhs) {$/;"	f	language:C++	class:X1	access:friend	signature:(X1 &lhs, X1 &rhs)
+swap1	src/chpater3.cc	/^void swap1(some_big_object &lhs, some_big_object &rhs);$/;"	p	language:C++	file:	signature:(some_big_object &lhs, some_big_object &rhs)
+t	src/chpater1.cc	/^  std::thread t(my_func);$/;"	p	language:C++	file:	signature:(my_func)
+t	src/chpater2.cc	/^  std::thread &t;$/;"	m	language:C++	class:thread_guard	file:	access:private
+t	src/chpater2.cc	/^  std::thread t;$/;"	m	language:C++	class:scoped_thread	file:	access:private
+t	src/chpater3.cc	/^  std::thread t(high_level_func);$/;"	p	language:C++	file:	signature:(high_level_func)
+t	src/chpater4.cc	/^  std::packaged_task<int()> t;$/;"	l	language:C++
+t	src/chpater4.cc	/^  timer t;$/;"	l	language:C++
+t	src/chpater4.h	/^    std::cout << t << " ";$/;"	l	language:C++
+t	src/chpater5.cc	/^  timer t;$/;"	l	language:C++
+t1	src/chpater3.cc	/^  std::thread t1;$/;"	l	language:C++
+t1	src/chpater4.cc	/^  std::thread t1(data_preparation_thread);$/;"	p	language:C++	file:	signature:(data_preparation_thread)
+t1	src/chpater4.cc	/^  std::thread t1(f1);$/;"	p	language:C++	file:	signature:(f1)
+t1	src/chpater5.cc	/^  std::thread t1(f1);$/;"	p	language:C++	file:	signature:(f1)
+t2	src/chpater3.cc	/^  std::thread t2;$/;"	l	language:C++
+t2	src/chpater4.cc	/^  std::thread t2(data_processing_thread);$/;"	p	language:C++	file:	signature:(data_processing_thread)
+t2	src/chpater4.cc	/^  std::thread t2(f2, task);$/;"	p	language:C++	file:	signature:(f2, task)
+t2	src/chpater5.cc	/^  std::thread t2(f2);$/;"	p	language:C++	file:	signature:(f2)
+task	src/chpater4.cc	/^  auto task = [](int b) {$/;"	l	language:C++
+task	src/chpater4.cc	/^  std::packaged_task<int(int)> task(f);$/;"	p	language:C++	file:	signature:(f)
+tasks	src/chpater4.cc	/^  std::deque<std::packaged_task<int(int)>> tasks;$/;"	l	language:C++
+the_answer	src/chpater4.cc	/^  std::future<int> the_answer = std::async([]() { return 1 + 1; });$/;"	l	language:C++
+the_answer	src/chpater4.cc	/^  std::future<int> the_answer = std::async(std::launch::deferred, []() {$/;"	l	language:C++
+this_thread_hierarchy_value	src/chpater3.cc	/^thread_local unsigned long hierarchical_mutex::this_thread_hierarchy_value($/;"	p	language:C++	class:hierarchical_mutex	file:	signature:( ULONG_MAX)
+this_thread_hierarchy_value	src/chpater3.h	/^  static thread_local unsigned long this_thread_hierarchy_value;$/;"	m	language:C++	class:hierarchical_mutex	access:private
+thread	src/chpater2.cc	/^  scoped_thread(std::thread(do_work, 2));$/;"	p	language:C++	file:	signature:(do_work, 2)
+thread	src/chpater3.cc	/^    ts.push_back(std::thread(func1));$/;"	p	language:C++	file:	signature:(func1)
+thread	src/chpater3.cc	/^    ts.push_back(std::thread(func2));$/;"	p	language:C++	file:	signature:(func2)
+thread1	src/chpater3.cc	/^  std::thread thread1(func1);$/;"	p	language:C++	file:	signature:(func1)
+thread2	src/chpater3.cc	/^  std::thread thread2(func2);$/;"	p	language:C++	file:	signature:(func2)
+thread_guard	src/chpater2.cc	/^  explicit thread_guard(std::thread &t_) : t(t_) {}$/;"	f	language:C++	class:thread_guard	access:public	signature:(std::thread &t_)
 thread_guard	src/chpater2.cc	/^class thread_guard {$/;"	c	language:C++	file:
+thread_guard::join	src/chpater2.cc	/^      t.join();$/;"	p	language:C++	file:	signature:()
+thread_guard::operator =	src/chpater2.cc	/^  thread_guard &operator=(thread_guard const &) = delete;$/;"	p	language:C++	class:thread_guard	file:	access:public	signature:(thread_guard const &)
+thread_guard::p	src/chpater2.cc	/^  thread_guard(thread_guard const &p) = delete;$/;"	m	language:C++	class:thread_guard	file:	access:public
+thread_guard::t	src/chpater2.cc	/^  std::thread &t;$/;"	m	language:C++	class:thread_guard	file:	access:private
+thread_guard::thread_guard	src/chpater2.cc	/^  explicit thread_guard(std::thread &t_) : t(t_) {}$/;"	f	language:C++	class:thread_guard	access:public	signature:(std::thread &t_)
+thread_guard::~thread_guard	src/chpater2.cc	/^  ~thread_guard() {$/;"	f	language:C++	class:thread_guard	access:public	signature:()
 threadsafe_queue	src/chpater4.h	/^class threadsafe_queue {$/;"	c	language:C++
-threadsafe_stack	src/chpater3.h	/^  threadsafe_stack() {}$/;"	f	language:C++	class:threadsafe_stack
-threadsafe_stack	src/chpater3.h	/^  threadsafe_stack(const threadsafe_stack &other) {$/;"	f	language:C++	class:threadsafe_stack
+threadsafe_queue::data_cond	src/chpater4.h	/^  std::condition_variable data_cond;$/;"	m	language:C++	class:threadsafe_queue	access:private
+threadsafe_queue::data_queue	src/chpater4.h	/^  std::queue<T> data_queue;$/;"	m	language:C++	class:threadsafe_queue	access:private
+threadsafe_queue::lk	src/chpater4.h	/^    std::lock_guard<std::mutex> lk(mut);$/;"	p	language:C++	signature:(mut)
+threadsafe_queue::lk	src/chpater4.h	/^    std::unique_lock<std::mutex> lk(mut);$/;"	p	language:C++	signature:(mut)
+threadsafe_queue::mut	src/chpater4.h	/^  std::mutex mut;$/;"	m	language:C++	class:threadsafe_queue	access:private
+threadsafe_queue::notify_one	src/chpater4.h	/^    data_cond.notify_one();$/;"	p	language:C++	signature:()
+threadsafe_queue::pop	src/chpater4.h	/^    data_queue.pop();$/;"	p	language:C++	signature:()
+threadsafe_queue::push	src/chpater4.h	/^    data_queue.push(new_value);$/;"	p	language:C++	signature:(new_value)
+threadsafe_queue::push	src/chpater4.h	/^  void push(T new_value) {$/;"	f	language:C++	class:threadsafe_queue	access:public	signature:(T new_value)
+threadsafe_queue::wait	src/chpater4.h	/^    data_cond.wait(lk, [this] { return !data_queue.empty(); });$/;"	p	language:C++	signature:(lk, [this] { return !data_queue.empty(); })
+threadsafe_queue::wait_and_pop	src/chpater4.h	/^  void wait_and_pop(T &value) {$/;"	f	language:C++	class:threadsafe_queue	access:public	signature:(T &value)
+threadsafe_stack	src/chpater3.h	/^  threadsafe_stack() {}$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:()
+threadsafe_stack	src/chpater3.h	/^  threadsafe_stack(const threadsafe_stack &other) {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:(const threadsafe_stack &other)
 threadsafe_stack	src/chpater3.h	/^class threadsafe_stack {$/;"	c	language:C++
-timer	src/utils.h	/^  timer() { starting_time = std::chrono::high_resolution_clock::now(); }$/;"	f	language:C++	class:timer
+threadsafe_stack::data	src/chpater3.h	/^  std::stack<T> data;$/;"	m	language:C++	class:threadsafe_stack	access:private
+threadsafe_stack::empty	src/chpater3.h	/^  bool empty() const {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:() const
+threadsafe_stack::lock	src/chpater3.h	/^    std::lock_guard<std::mutex> lock(m);$/;"	p	language:C++	signature:(m)
+threadsafe_stack::lock	src/chpater3.h	/^    std::lock_guard<std::mutex> lock(other.m);$/;"	p	language:C++	signature:(other.m)
+threadsafe_stack::m	src/chpater3.h	/^  mutable std::mutex m;$/;"	m	language:C++	class:threadsafe_stack	access:private
+threadsafe_stack::operator =	src/chpater3.h	/^  threadsafe_stack &operator=(const threadsafe_stack &) = delete;$/;"	p	language:C++	class:threadsafe_stack	access:public	signature:(const threadsafe_stack &)
+threadsafe_stack::pop	src/chpater3.h	/^    data.pop();$/;"	p	language:C++	signature:()
+threadsafe_stack::pop	src/chpater3.h	/^  std::shared_ptr<T> pop() {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:()
+threadsafe_stack::pop	src/chpater3.h	/^  void pop(T &value) {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:(T &value)
+threadsafe_stack::push	src/chpater3.h	/^    data.push(new_value);$/;"	p	language:C++	signature:(new_value)
+threadsafe_stack::push	src/chpater3.h	/^  void push(T new_value) {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:(T new_value)
+threadsafe_stack::std::make_shared	src/chpater3.h	/^    std::shared_ptr<T> const res(std::make_shared<T>(data.top()));$/;"	p	language:C++	class:threadsafe_stack::std	signature:(data.top())
+threadsafe_stack::threadsafe_stack	src/chpater3.h	/^  threadsafe_stack() {}$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:()
+threadsafe_stack::threadsafe_stack	src/chpater3.h	/^  threadsafe_stack(const threadsafe_stack &other) {$/;"	f	language:C++	class:threadsafe_stack	access:public	signature:(const threadsafe_stack &other)
+timer	src/utils.h	/^  timer() { starting_time = std::chrono::high_resolution_clock::now(); }$/;"	f	language:C++	class:timer	access:public	signature:()
 timer	src/utils.h	/^class timer {$/;"	c	language:C++
-try_lock	src/chpater3.h	/^  bool try_lock() {$/;"	f	language:C++	class:hierarchical_mutex
-unlock	src/chpater3.h	/^  void unlock() {$/;"	f	language:C++	class:hierarchical_mutex
-unlock	src/chpater5.h	/^  void unlock() { flag.clear(std::memory_order_release); }$/;"	f	language:C++	class:spinlock_mutex
-update_data	src/chpater2.cc	/^void update_data(int id, double &data) { data = 2.0; }$/;"	f	language:C++
-update_hierarchy_value	src/chpater3.h	/^  void update_hierarchy_value() {$/;"	f	language:C++	class:hierarchical_mutex
-wait_and_pop	src/chpater4.h	/^  void wait_and_pop(T &value) {$/;"	f	language:C++	class:threadsafe_queue
-~scoped_thread	src/chpater2.cc	/^  ~scoped_thread() { t.join(); }$/;"	f	language:C++	class:scoped_thread
-~thread_guard	src/chpater2.cc	/^  ~thread_guard() {$/;"	f	language:C++	class:thread_guard
-~timer	src/utils.h	/^  ~timer() {$/;"	f	language:C++	class:timer
+timer::starting_time	src/utils.h	/^  std::chrono::high_resolution_clock::time_point starting_time;$/;"	m	language:C++	class:timer	access:private
+timer::std::endl	src/utils.h	/^                     .count() << std::endl;$/;"	m	language:C++	class:timer::std
+timer::timer	src/utils.h	/^  timer() { starting_time = std::chrono::high_resolution_clock::now(); }$/;"	f	language:C++	class:timer	access:public	signature:()
+timer::~timer	src/utils.h	/^  ~timer() {$/;"	f	language:C++	class:timer	access:public	signature:()
+to_add	src/chpater2.cc	/^  std::vector<int> to_add;$/;"	l	language:C++
+try_lock	src/chpater3.h	/^  bool try_lock() {$/;"	f	language:C++	class:hierarchical_mutex	access:public	signature:()
+ts	src/chpater3.cc	/^  std::vector<std::thread> ts;$/;"	l	language:C++
+ts	src/chpater4.cc	/^  std::vector<std::thread> ts;$/;"	l	language:C++
+ul	src/chpater3.cc	/^    auto ul = std::move(unique_lock);$/;"	l	language:C++
+ul	src/chpater4.cc	/^  std::unique_lock<std::mutex> ul(m);$/;"	p	language:C++	file:	signature:(m)
+unique_lock	src/chpater3.cc	/^    std::unique_lock<std::mutex> unique_lock(mutex1, std::adopt_lock);$/;"	p	language:C++	file:	signature:(mutex1, std::adopt_lock)
+unlock	src/chpater3.cc	/^    ul.unlock();$/;"	p	language:C++	file:	signature:()
+unlock	src/chpater3.h	/^    internal_mutex.unlock();$/;"	p	language:C++	signature:()
+unlock	src/chpater3.h	/^  void unlock() {$/;"	f	language:C++	class:hierarchical_mutex	access:public	signature:()
+unlock	src/chpater5.h	/^  void unlock() { flag.clear(std::memory_order_release); }$/;"	f	language:C++	class:spinlock_mutex	access:public	signature:()
+update_data	src/chpater2.cc	/^void update_data(int id, double &data) { data = 2.0; }$/;"	f	language:C++	signature:(int id, double &data)
+update_hierarchy_value	src/chpater3.h	/^  void update_hierarchy_value() {$/;"	f	language:C++	class:hierarchical_mutex	access:private	signature:()
+wait	src/chpater4.h	/^    data_cond.wait(lk, [this] { return !data_queue.empty(); });$/;"	p	language:C++	signature:(lk, [this] { return !data_queue.empty(); })
+wait_and_pop	src/chpater4.h	/^  void wait_and_pop(T &value) {$/;"	f	language:C++	class:threadsafe_queue	access:public	signature:(T &value)
+what	src/chpater3.h	/^  const char *what() const throw();$/;"	p	language:C++	struct:empty_stack	access:public	signature:() const
+x	src/chpater2.cc	/^  X x;$/;"	l	language:C++
+x	src/chpater5.cc	/^  Foo *x = p.fetch_add(2);$/;"	l	language:C++
+x	src/chpater5.cc	/^  std::atomic<bool> x, y;$/;"	l	language:C++
+y	src/chpater5.cc	/^  std::atomic<bool> x, y;$/;"	l	language:C++
+z	src/chpater5.cc	/^  std::atomic<int> z;$/;"	l	language:C++
+~scoped_thread	src/chpater2.cc	/^  ~scoped_thread() { t.join(); }$/;"	f	language:C++	class:scoped_thread	access:public	signature:()
+~thread_guard	src/chpater2.cc	/^  ~thread_guard() {$/;"	f	language:C++	class:thread_guard	access:public	signature:()
+~timer	src/utils.h	/^  ~timer() {$/;"	f	language:C++	class:timer	access:public	signature:()

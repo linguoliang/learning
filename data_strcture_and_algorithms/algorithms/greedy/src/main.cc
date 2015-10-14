@@ -1,3 +1,7 @@
 #include "activity_selection.h"
+#include "minimum_spanning_tree.h"
 
-int main() { return 0; }
+int main() {
+  activity_selection();
+  return 0;
+}
