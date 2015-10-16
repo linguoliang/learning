@@ -132,6 +132,4 @@ class HuffmanCode {
   std::vector<std::pair<char, std::string>> codes;
 };
 
-void huffman_coding();
-
 #endif

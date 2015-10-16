@@ -483,21 +483,41 @@ DecreseKey	src/huffman_coding.h	/^void MinHeap<T>::DecreseKey(typename std::vect
 EQUALS	build/Makefile	/^EQUALS = =$/;"	m	language:Make
 EnCode	src/huffman_coding.cc	/^void HuffmanCode::EnCode(vector<pair<char, int>> chs) {$/;"	f	language:C++	class:HuffmanCode	signature:(vector<pair<char, int>> chs)
 EnCode	src/huffman_coding.h	/^  void EnCode(std::vector<std::pair<char, int>> chs);$/;"	p	language:C++	class:HuffmanCode	access:private	signature:(std::vector<std::pair<char, int>> chs)
+EnCode	src/huffman_coding1.cc	/^void HuffmanCode1::EnCode(vector<pair<char, int>> chs) {$/;"	f	language:C++	class:HuffmanCode1	signature:(vector<pair<char, int>> chs)
+EnCode	src/huffman_coding1.h	/^  void EnCode(std::vector<std::pair<char, int>> chs);$/;"	p	language:C++	class:HuffmanCode1	access:private	signature:(std::vector<std::pair<char, int>> chs)
 ExtractMin	src/huffman_coding.h	/^  T ExtractMin();$/;"	p	language:C++	class:MinHeap	access:public	signature:()
 ExtractMin	src/huffman_coding.h	/^T MinHeap<T>::ExtractMin() {$/;"	f	language:C++	class:MinHeap	signature:()
-GenerateCode	src/huffman_coding.cc	/^void HuffmanCode::GenerateCode(const HuffmanNode &hn, std::string &str) {$/;"	f	language:C++	class:HuffmanCode	signature:(const HuffmanNode &hn, std::string &str)
+GenerateCode	src/huffman_coding.cc	/^void HuffmanCode::GenerateCode(const HuffmanNode &hn, string &str) {$/;"	f	language:C++	class:HuffmanCode	signature:(const HuffmanNode &hn, string &str)
 GenerateCode	src/huffman_coding.h	/^  void GenerateCode(const HuffmanNode &hn, std::string &str);$/;"	p	language:C++	class:HuffmanCode	access:private	signature:(const HuffmanNode &hn, std::string &str)
+GenerateCode	src/huffman_coding1.cc	/^void HuffmanCode1::GenerateCode(const HuffmanNode1 &hn, string &str) {$/;"	f	language:C++	class:HuffmanCode1	signature:(const HuffmanNode1 &hn, string &str)
+GenerateCode	src/huffman_coding1.h	/^  void GenerateCode(const HuffmanNode1 &hn, std::string &str);$/;"	p	language:C++	class:HuffmanCode1	access:private	signature:(const HuffmanNode1 &hn, std::string &str)
 HEX	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	429;"	d	language:C	file:
 HEX	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	424;"	d	language:C++	file:
 HEX	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	429;"	d	language:C	file:
 HEX	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	424;"	d	language:C++	file:
+HUFFMAN_CODING1_H_	src/huffman_coding1.h	2;"	d	language:C++
 HUFFMAN_CODING_H_	src/huffman_coding.h	2;"	d	language:C++
 HuffmanCode	src/huffman_coding.cc	/^HuffmanCode::HuffmanCode(vector<pair<char, int>> chs) { EnCode(chs); }$/;"	f	language:C++	class:HuffmanCode	signature:(vector<pair<char, int>> chs)
 HuffmanCode	src/huffman_coding.h	/^  explicit HuffmanCode(std::vector<std::pair<char, int>> chs);$/;"	p	language:C++	class:HuffmanCode	access:public	signature:(std::vector<std::pair<char, int>> chs)
 HuffmanCode	src/huffman_coding.h	/^class HuffmanCode {$/;"	c	language:C++
+HuffmanCode1	src/huffman_coding1.cc	/^HuffmanCode1::HuffmanCode1(vector<pair<char, int>> chs) { EnCode(chs); }$/;"	f	language:C++	class:HuffmanCode1	signature:(vector<pair<char, int>> chs)
+HuffmanCode1	src/huffman_coding1.h	/^  explicit HuffmanCode1(std::vector<std::pair<char, int>> chs);$/;"	p	language:C++	class:HuffmanCode1	access:public	signature:(std::vector<std::pair<char, int>> chs)
+HuffmanCode1	src/huffman_coding1.h	/^class HuffmanCode1 {$/;"	c	language:C++
+HuffmanCode1::EnCode	src/huffman_coding1.cc	/^void HuffmanCode1::EnCode(vector<pair<char, int>> chs) {$/;"	f	language:C++	class:HuffmanCode1	signature:(vector<pair<char, int>> chs)
+HuffmanCode1::EnCode	src/huffman_coding1.h	/^  void EnCode(std::vector<std::pair<char, int>> chs);$/;"	p	language:C++	class:HuffmanCode1	access:private	signature:(std::vector<std::pair<char, int>> chs)
+HuffmanCode1::GenerateCode	src/huffman_coding1.cc	/^void HuffmanCode1::GenerateCode(const HuffmanNode1 &hn, string &str) {$/;"	f	language:C++	class:HuffmanCode1	signature:(const HuffmanNode1 &hn, string &str)
+HuffmanCode1::GenerateCode	src/huffman_coding1.h	/^  void GenerateCode(const HuffmanNode1 &hn, std::string &str);$/;"	p	language:C++	class:HuffmanCode1	access:private	signature:(const HuffmanNode1 &hn, std::string &str)
+HuffmanCode1::HuffmanCode1	src/huffman_coding1.cc	/^HuffmanCode1::HuffmanCode1(vector<pair<char, int>> chs) { EnCode(chs); }$/;"	f	language:C++	class:HuffmanCode1	signature:(vector<pair<char, int>> chs)
+HuffmanCode1::HuffmanCode1	src/huffman_coding1.h	/^  explicit HuffmanCode1(std::vector<std::pair<char, int>> chs);$/;"	p	language:C++	class:HuffmanCode1	access:public	signature:(std::vector<std::pair<char, int>> chs)
+HuffmanCode1::codes	src/huffman_coding1.h	/^  std::vector<std::pair<char, std::string>> codes;$/;"	m	language:C++	class:HuffmanCode1	access:private
+HuffmanCode1::get_code	src/huffman_coding1.cc	/^string HuffmanCode1::get_code(char ch) {$/;"	f	language:C++	class:HuffmanCode1	signature:(char ch)
+HuffmanCode1::get_code	src/huffman_coding1.h	/^  std::string get_code(char ch);$/;"	p	language:C++	class:HuffmanCode1	access:public	signature:(char ch)
+HuffmanCode1::is_leaf	src/huffman_coding1.h	/^  bool is_leaf(const HuffmanNode1 &hn) { return hn.data != ' '; }$/;"	f	language:C++	class:HuffmanCode1	access:private	signature:(const HuffmanNode1 &hn)
+HuffmanCode1::~HuffmanCode1	src/huffman_coding1.cc	/^HuffmanCode1::~HuffmanCode1() {}$/;"	f	language:C++	class:HuffmanCode1	signature:()
+HuffmanCode1::~HuffmanCode1	src/huffman_coding1.h	/^  ~HuffmanCode1();$/;"	p	language:C++	class:HuffmanCode1	access:public	signature:()
 HuffmanCode::EnCode	src/huffman_coding.cc	/^void HuffmanCode::EnCode(vector<pair<char, int>> chs) {$/;"	f	language:C++	class:HuffmanCode	signature:(vector<pair<char, int>> chs)
 HuffmanCode::EnCode	src/huffman_coding.h	/^  void EnCode(std::vector<std::pair<char, int>> chs);$/;"	p	language:C++	class:HuffmanCode	access:private	signature:(std::vector<std::pair<char, int>> chs)
-HuffmanCode::GenerateCode	src/huffman_coding.cc	/^void HuffmanCode::GenerateCode(const HuffmanNode &hn, std::string &str) {$/;"	f	language:C++	class:HuffmanCode	signature:(const HuffmanNode &hn, std::string &str)
+HuffmanCode::GenerateCode	src/huffman_coding.cc	/^void HuffmanCode::GenerateCode(const HuffmanNode &hn, string &str) {$/;"	f	language:C++	class:HuffmanCode	signature:(const HuffmanNode &hn, string &str)
 HuffmanCode::GenerateCode	src/huffman_coding.h	/^  void GenerateCode(const HuffmanNode &hn, std::string &str);$/;"	p	language:C++	class:HuffmanCode	access:private	signature:(const HuffmanNode &hn, std::string &str)
 HuffmanCode::HuffmanCode	src/huffman_coding.cc	/^HuffmanCode::HuffmanCode(vector<pair<char, int>> chs) { EnCode(chs); }$/;"	f	language:C++	class:HuffmanCode	signature:(vector<pair<char, int>> chs)
 HuffmanCode::HuffmanCode	src/huffman_coding.h	/^  explicit HuffmanCode(std::vector<std::pair<char, int>> chs);$/;"	p	language:C++	class:HuffmanCode	access:public	signature:(std::vector<std::pair<char, int>> chs)
@@ -511,6 +531,20 @@ HuffmanNode	src/huffman_coding.cc	/^    mh_.InsertKey(HuffmanNode(ch.first, ch.s
 HuffmanNode	src/huffman_coding.h	/^  HuffmanNode(char d, int f)$/;"	f	language:C++	struct:HuffmanNode	access:public	signature:(char d, int f)
 HuffmanNode	src/huffman_coding.h	/^  HuffmanNode(char d, int f, struct HuffmanNode *l, struct HuffmanNode *r)$/;"	f	language:C++	struct:HuffmanNode	access:public	signature:(char d, int f, struct HuffmanNode *l, struct HuffmanNode *r)
 HuffmanNode	src/huffman_coding.h	/^struct HuffmanNode {$/;"	s	language:C++
+HuffmanNode1	src/huffman_coding1.cc	/^    q1.push(HuffmanNode1(ch.first, ch.second));$/;"	p	language:C++	file:	signature:(ch.first, ch.second)
+HuffmanNode1	src/huffman_coding1.h	/^  HuffmanNode1() : left(nullptr), right(nullptr) {}$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:()
+HuffmanNode1	src/huffman_coding1.h	/^  HuffmanNode1(char d, int f)$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:(char d, int f)
+HuffmanNode1	src/huffman_coding1.h	/^  HuffmanNode1(char d, int f, struct HuffmanNode1 *l, struct HuffmanNode1 *r)$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:(char d, int f, struct HuffmanNode1 *l, struct HuffmanNode1 *r)
+HuffmanNode1	src/huffman_coding1.h	/^struct HuffmanNode1 {$/;"	s	language:C++
+HuffmanNode1::HuffmanNode1	src/huffman_coding1.h	/^  HuffmanNode1() : left(nullptr), right(nullptr) {}$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:()
+HuffmanNode1::HuffmanNode1	src/huffman_coding1.h	/^  HuffmanNode1(char d, int f)$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:(char d, int f)
+HuffmanNode1::HuffmanNode1	src/huffman_coding1.h	/^  HuffmanNode1(char d, int f, struct HuffmanNode1 *l, struct HuffmanNode1 *r)$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:(char d, int f, struct HuffmanNode1 *l, struct HuffmanNode1 *r)
+HuffmanNode1::data	src/huffman_coding1.h	/^  char data;$/;"	m	language:C++	struct:HuffmanNode1	access:public
+HuffmanNode1::freq	src/huffman_coding1.h	/^  int freq;$/;"	m	language:C++	struct:HuffmanNode1	access:public
+HuffmanNode1::left	src/huffman_coding1.h	/^  struct HuffmanNode1 *left;$/;"	m	language:C++	struct:HuffmanNode1	typeref:struct:HuffmanNode1::HuffmanNode1	access:public
+HuffmanNode1::operator <	src/huffman_coding1.h	/^  bool operator<(const HuffmanNode1 &rhn) { return freq < rhn.freq; }$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:(const HuffmanNode1 &rhn)
+HuffmanNode1::operator >	src/huffman_coding1.h	/^  bool operator>(const HuffmanNode1 &rhn) { return freq > rhn.freq; }$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:(const HuffmanNode1 &rhn)
+HuffmanNode1::right	src/huffman_coding1.h	/^  struct HuffmanNode1 *right;$/;"	m	language:C++	struct:HuffmanNode1	typeref:struct:HuffmanNode1::HuffmanNode1	access:public
 HuffmanNode::HuffmanNode	src/huffman_coding.h	/^  HuffmanNode(char d, int f)$/;"	f	language:C++	struct:HuffmanNode	access:public	signature:(char d, int f)
 HuffmanNode::HuffmanNode	src/huffman_coding.h	/^  HuffmanNode(char d, int f, struct HuffmanNode *l, struct HuffmanNode *r)$/;"	f	language:C++	struct:HuffmanNode	access:public	signature:(char d, int f, struct HuffmanNode *l, struct HuffmanNode *r)
 HuffmanNode::data	src/huffman_coding.h	/^  char data;$/;"	m	language:C++	struct:HuffmanNode	access:public
@@ -733,21 +767,28 @@ activity_selection	src/activity_selection.h	/^void activity_selection();$/;"	p	l
 arr_	src/huffman_coding.h	/^  std::vector<T> arr_;$/;"	m	language:C++	class:MinHeap	access:private
 capacity	src/huffman_coding.h	/^  typename std::vector<T>::size_type capacity() { return arr_.capacity(); }$/;"	f	language:C++	class:MinHeap	access:public	signature:()
 codes	src/huffman_coding.h	/^  std::vector<std::pair<char, std::string>> codes;$/;"	m	language:C++	class:HuffmanCode	access:private
+codes	src/huffman_coding1.h	/^  std::vector<std::pair<char, std::string>> codes;$/;"	m	language:C++	class:HuffmanCode1	access:private
 compare	src/activity_selection.h	/^inline bool compare(activity &a1, activity &a2) {$/;"	f	language:C++	signature:(activity &a1, activity &a2)
 data	src/huffman_coding.h	/^  char data;$/;"	m	language:C++	struct:HuffmanNode	access:public
+data	src/huffman_coding1.h	/^  char data;$/;"	m	language:C++	struct:HuffmanNode1	access:public
 end_time	src/activity_selection.h	/^  int end_time;$/;"	m	language:C++	struct:activity	access:public
 erase	src/huffman_coding.h	/^  arr_.erase(arr_.begin() + static_cast<long>(size()) - 1);$/;"	p	language:C++	signature:(arr_.begin() + static_cast<long>(size()) - 1)
 features	build/CMakeFiles/feature_tests.c	/^  const char features[] = {""$/;"	v	language:C
 features	build/CMakeFiles/feature_tests.cxx	/^  const char features[] = {""$/;"	v	language:C++
+find_smallest	src/huffman_coding1.cc	/^  auto find_smallest = [&]() {$/;"	l	language:C++
 freq	src/huffman_coding.h	/^  int freq;$/;"	m	language:C++	struct:HuffmanNode	access:public
+freq	src/huffman_coding1.h	/^  int freq;$/;"	m	language:C++	struct:HuffmanNode1	access:public
 get_code	src/huffman_coding.cc	/^string HuffmanCode::get_code(char ch) {$/;"	f	language:C++	class:HuffmanCode	signature:(char ch)
 get_code	src/huffman_coding.h	/^  std::string get_code(char);$/;"	p	language:C++	class:HuffmanCode	access:public	signature:(char)
+get_code	src/huffman_coding1.cc	/^string HuffmanCode1::get_code(char ch) {$/;"	f	language:C++	class:HuffmanCode1	signature:(char ch)
+get_code	src/huffman_coding1.h	/^  std::string get_code(char ch);$/;"	p	language:C++	class:HuffmanCode1	access:public	signature:(char ch)
 get_min	src/huffman_coding.h	/^  T get_min() { return arr_[0]; }$/;"	f	language:C++	class:MinHeap	access:public	signature:()
 hn1	src/huffman_coding.cc	/^    auto hn1 = new HuffmanNode(mh_.ExtractMin());$/;"	l	language:C++
 hn2	src/huffman_coding.cc	/^    auto hn2 = new HuffmanNode(mh_.ExtractMin());$/;"	l	language:C++
-huffman_coding	src/huffman_coding.h	/^void huffman_coding();$/;"	p	language:C++	signature:()
 huffman_coding	src/main.cc	/^void huffman_coding() {$/;"	f	language:C++	signature:()
 huffman_coding	src/main.cc	/^void huffman_coding();$/;"	p	language:C++	file:	signature:()
+huffman_coding1	src/main.cc	/^void huffman_coding1() {$/;"	f	language:C++	signature:()
+huffman_coding1	src/main.cc	/^void huffman_coding1();$/;"	p	language:C++	file:	signature:()
 i	src/activity_selection.cc	/^  vector<activity>::size_type i = 0;$/;"	l	language:C++
 info_arch	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	language:C
 info_arch	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	language:C++
@@ -774,8 +815,10 @@ info_version	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char 
 info_version	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v	language:C
 info_version	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	language:C++
 is_leaf	src/huffman_coding.h	/^  bool is_leaf(const HuffmanNode &hn) { return hn.data != ' '; }$/;"	f	language:C++	class:HuffmanCode	access:private	signature:(const HuffmanNode &hn)
+is_leaf	src/huffman_coding1.h	/^  bool is_leaf(const HuffmanNode1 &hn) { return hn.data != ' '; }$/;"	f	language:C++	class:HuffmanCode1	access:private	signature:(const HuffmanNode1 &hn)
 left	src/huffman_coding.h	/^  struct HuffmanNode *left;$/;"	m	language:C++	struct:HuffmanNode	typeref:struct:HuffmanNode::HuffmanNode	access:public
 left	src/huffman_coding.h	/^  typename std::vector<T>::size_type left($/;"	f	language:C++	class:MinHeap	access:private	signature:( typename std::vector<T>::size_type idx)
+left	src/huffman_coding1.h	/^  struct HuffmanNode1 *left;$/;"	m	language:C++	struct:HuffmanNode1	typeref:struct:HuffmanNode1::HuffmanNode1	access:public
 main	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f	language:C	signature:(int argc, char* argv[])
 main	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	language:C
 main	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	language:C++	signature:(int argc, char* argv[])
@@ -787,11 +830,19 @@ main	build/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (voi
 main	src/main.cc	/^int main() {$/;"	f	language:C++	signature:()
 mh_	src/huffman_coding.cc	/^  MinHeap<HuffmanNode> mh_;$/;"	l	language:C++
 min	src/huffman_coding.cc	/^  auto min = mh_.ExtractMin();$/;"	l	language:C++
+n1	src/huffman_coding1.cc	/^    auto n1 = new HuffmanNode1(find_smallest());$/;"	l	language:C++
+n2	src/huffman_coding1.cc	/^    auto n2 = new HuffmanNode1(find_smallest());$/;"	l	language:C++
 operator <	src/huffman_coding.h	/^  bool operator<(const HuffmanNode &rhn) { return freq < rhn.freq; }$/;"	f	language:C++	struct:HuffmanNode	access:public	signature:(const HuffmanNode &rhn)
+operator <	src/huffman_coding1.h	/^  bool operator<(const HuffmanNode1 &rhn) { return freq < rhn.freq; }$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:(const HuffmanNode1 &rhn)
 operator >	src/huffman_coding.h	/^  bool operator>(const HuffmanNode &rhn) { return freq > rhn.freq; }$/;"	f	language:C++	struct:HuffmanNode	access:public	signature:(const HuffmanNode &rhn)
+operator >	src/huffman_coding1.h	/^  bool operator>(const HuffmanNode1 &rhn) { return freq > rhn.freq; }$/;"	f	language:C++	struct:HuffmanNode1	access:public	signature:(const HuffmanNode1 &rhn)
 parent	src/huffman_coding.h	/^  typename std::vector<T>::size_type parent($/;"	f	language:C++	class:MinHeap	access:private	signature:( typename std::vector<T>::size_type idx)
+pop	src/huffman_coding1.cc	/^  q2.pop();$/;"	p	language:C++	file:	signature:()
 pop_back	src/huffman_coding.cc	/^    str.pop_back();$/;"	p	language:C++	file:	signature:()
+pop_back	src/huffman_coding1.cc	/^    str.pop_back();$/;"	p	language:C++	file:	signature:()
 push_back	src/huffman_coding.h	/^  arr_.push_back(key);$/;"	p	language:C++	signature:(key)
+q1	src/huffman_coding1.cc	/^  queue<HuffmanNode1> q1;$/;"	l	language:C++
+q2	src/huffman_coding1.cc	/^  queue<HuffmanNode1> q2;$/;"	l	language:C++
 qnxnto	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C
 qnxnto	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C++
 qnxnto	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C
@@ -800,10 +851,12 @@ require	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	/^  int require = 
 require	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l	language:C++
 require	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l	language:C
 require	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l	language:C++
-ret	src/huffman_coding.cc	/^  auto ret = find_if($/;"	l	language:C++
+ret	src/huffman_coding.cc	/^  auto ret =$/;"	l	language:C++
 ret	src/huffman_coding.h	/^  T ret = get_min();$/;"	l	language:C++
+ret	src/huffman_coding1.cc	/^  auto ret =$/;"	l	language:C++
 right	src/huffman_coding.h	/^  struct HuffmanNode *right;$/;"	m	language:C++	struct:HuffmanNode	typeref:struct:HuffmanNode::HuffmanNode	access:public
 right	src/huffman_coding.h	/^  typename std::vector<T>::size_type right($/;"	f	language:C++	class:MinHeap	access:private	signature:( typename std::vector<T>::size_type idx)
+right	src/huffman_coding1.h	/^  struct HuffmanNode1 *right;$/;"	m	language:C++	struct:HuffmanNode1	typeref:struct:HuffmanNode1::HuffmanNode1	access:public
 size	src/huffman_coding.h	/^  typename std::vector<T>::size_type size() { return arr_.size(); }$/;"	f	language:C++	class:MinHeap	access:public	signature:()
 smalleat_idx	src/huffman_coding.h	/^  auto smalleat_idx = idx;$/;"	l	language:C++
 start_time	src/activity_selection.h	/^  int start_time;$/;"	m	language:C++	struct:activity	access:public
@@ -811,9 +864,12 @@ static_cast	src/huffman_coding.h	/^    MinHeapify(static_cast<typename std::vect
 std::swap	src/huffman_coding.h	/^    std::swap(arr_[parent(idx)], arr_[idx]);$/;"	p	language:C++	class:std	signature:(arr_[parent(idx)], arr_[idx])
 std::swap	src/huffman_coding.h	/^    std::swap(arr_[smalleat_idx], arr_[idx]);$/;"	p	language:C++	class:std	signature:(arr_[smalleat_idx], arr_[idx])
 str	src/huffman_coding.cc	/^  string str;$/;"	l	language:C++
+str	src/huffman_coding1.cc	/^  string str;$/;"	l	language:C++
 swap	src/huffman_coding.h	/^    std::swap(arr_[parent(idx)], arr_[idx]);$/;"	p	language:C++	class:std	signature:(arr_[parent(idx)], arr_[idx])
 swap	src/huffman_coding.h	/^    std::swap(arr_[smalleat_idx], arr_[idx]);$/;"	p	language:C++	class:std	signature:(arr_[smalleat_idx], arr_[idx])
 ~HuffmanCode	src/huffman_coding.cc	/^HuffmanCode::~HuffmanCode() {}$/;"	f	language:C++	class:HuffmanCode	signature:()
 ~HuffmanCode	src/huffman_coding.h	/^  ~HuffmanCode();$/;"	p	language:C++	class:HuffmanCode	access:public	signature:()
+~HuffmanCode1	src/huffman_coding1.cc	/^HuffmanCode1::~HuffmanCode1() {}$/;"	f	language:C++	class:HuffmanCode1	signature:()
+~HuffmanCode1	src/huffman_coding1.h	/^  ~HuffmanCode1();$/;"	p	language:C++	class:HuffmanCode1	access:public	signature:()
 ~MinHeap	src/huffman_coding.h	/^  ~MinHeap();$/;"	p	language:C++	class:MinHeap	access:public	signature:()
 ~MinHeap	src/huffman_coding.h	/^MinHeap<T>::~MinHeap() {}$/;"	f	language:C++	class:MinHeap	signature:()

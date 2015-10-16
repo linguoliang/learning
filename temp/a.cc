@@ -1,22 +1,23 @@
+#include <thread>
 #include <vector>
 
-using namespace std;
+using std::thread;
+using std::vector;
 
-template <typename T>
-class A {
- public:
-  A();
-  void test(T a);
-  void test(typename vector<T>::size_type a);
-};
+int main() {
+  vector<thread> ts;
 
-template <typename T>
-A<T>::A() {}
+  for (int i = 0; i != 4; ++i) {
+    ts.push_back(thread([]() {
+      int a = 0;
+      for (unsigned long i = 0; i < 10000000000000; ++i) {
+        a += 2;
+      }
+    }));
+  }
 
-template <typename T>
-void A<T>::test(T a) {}
-
-template <typename T>
-void A<T>::test(typename vector<T>::size_type a) {}
-
-int main() { return 0; }
+  for (auto &t : ts) {
+    t.join();
+  }
+  return 0;
+}

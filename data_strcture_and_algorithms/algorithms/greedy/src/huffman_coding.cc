@@ -1,13 +1,10 @@
 #include "huffman_coding.h"
 
 #include <algorithm>
-#include <iostream>
 #include <string>
 #include <tuple>
 #include <vector>
 
-using std::cout;
-using std::endl;
 using std::find_if;
 using std::pair;
 using std::string;
@@ -18,9 +15,9 @@ HuffmanCode::HuffmanCode(vector<pair<char, int>> chs) { EnCode(chs); }
 HuffmanCode::~HuffmanCode() {}
 
 string HuffmanCode::get_code(char ch) {
-  auto ret = find_if(
-      codes.begin(), codes.end(),
-      [&](const std::pair<char, std::string> &c) { return c.first == ch; });
+  auto ret =
+      find_if(codes.begin(), codes.end(),
+              [&](const pair<char, string> &c) { return c.first == ch; });
   return ret->second;
 }
 
@@ -44,7 +41,7 @@ void HuffmanCode::EnCode(vector<pair<char, int>> chs) {
   GenerateCode(min, str);
 }
 
-void HuffmanCode::GenerateCode(const HuffmanNode &hn, std::string &str) {
+void HuffmanCode::GenerateCode(const HuffmanNode &hn, string &str) {
   if (hn.left != nullptr) {
     str.push_back('0');
     GenerateCode(*hn.left, str);
