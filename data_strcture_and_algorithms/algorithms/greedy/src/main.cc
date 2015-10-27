@@ -1,6 +1,8 @@
 #include "activity_selection.h"
+#include "coins.h"
 #include "huffman_coding.h"
 #include "huffman_coding1.h"
+#include "job_sequencing.h"
 
 #include <iostream>
 
@@ -13,7 +15,9 @@ void huffman_coding1();
 int main() {
   // activity_selection();
   // huffman_coding();
-  huffman_coding1();
+  // huffman_coding1();
+  // job_sequencing();
+  coins();
   return 0;
 }
 

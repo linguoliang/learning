@@ -474,6 +474,7 @@ COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	28;
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	167;"	d	language:C++	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	206;"	d	language:C++	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	d	language:C++	file:
+CONINS_H_	src/coins.h	2;"	d	language:C++
 DEC	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	418;"	d	language:C	file:
 DEC	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	413;"	d	language:C++	file:
 DEC	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	418;"	d	language:C	file:
@@ -557,6 +558,11 @@ ID_VOID_MAIN	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	6;"	d	languag
 ID_VOID_MAIN	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	language:C	file:
 InsertKey	src/huffman_coding.h	/^  void InsertKey(T key);$/;"	p	language:C++	class:MinHeap	access:public	signature:(T key)
 InsertKey	src/huffman_coding.h	/^void MinHeap<T>::InsertKey(T key) {$/;"	f	language:C++	class:MinHeap	signature:(T key)
+JOB_SEQUENCING_H_	src/job_sequencing.h	2;"	d	language:C++
+Job	src/job_sequencing.h	/^struct Job {$/;"	s	language:C++
+Job::deadline	src/job_sequencing.h	/^  int deadline;$/;"	m	language:C++	struct:Job	access:public
+Job::id	src/job_sequencing.h	/^  std::string id;$/;"	m	language:C++	struct:Job	access:public
+Job::profit	src/job_sequencing.h	/^  int profit;$/;"	m	language:C++	struct:Job	access:public
 MinHeap	src/huffman_coding.h	/^  explicit MinHeap();$/;"	p	language:C++	class:MinHeap	access:public	signature:()
 MinHeap	src/huffman_coding.h	/^  explicit MinHeap(const std::vector<T> &arr);$/;"	p	language:C++	class:MinHeap	access:public	signature:(const std::vector<T> &arr)
 MinHeap	src/huffman_coding.h	/^MinHeap<T>::MinHeap() {}$/;"	f	language:C++	class:MinHeap	signature:()
@@ -768,11 +774,16 @@ arr_	src/huffman_coding.h	/^  std::vector<T> arr_;$/;"	m	language:C++	class:MinH
 capacity	src/huffman_coding.h	/^  typename std::vector<T>::size_type capacity() { return arr_.capacity(); }$/;"	f	language:C++	class:MinHeap	access:public	signature:()
 codes	src/huffman_coding.h	/^  std::vector<std::pair<char, std::string>> codes;$/;"	m	language:C++	class:HuffmanCode	access:private
 codes	src/huffman_coding1.h	/^  std::vector<std::pair<char, std::string>> codes;$/;"	m	language:C++	class:HuffmanCode1	access:private
+coins	src/coins.cc	/^void coins() {$/;"	f	language:C++	signature:()
+coins	src/coins.h	/^void coins();$/;"	p	language:C++	signature:()
 compare	src/activity_selection.h	/^inline bool compare(activity &a1, activity &a2) {$/;"	f	language:C++	signature:(activity &a1, activity &a2)
 data	src/huffman_coding.h	/^  char data;$/;"	m	language:C++	struct:HuffmanNode	access:public
 data	src/huffman_coding1.h	/^  char data;$/;"	m	language:C++	struct:HuffmanNode1	access:public
+deadline	src/job_sequencing.h	/^  int deadline;$/;"	m	language:C++	struct:Job	access:public
 end_time	src/activity_selection.h	/^  int end_time;$/;"	m	language:C++	struct:activity	access:public
+endl	src/coins.cc	/^      cout << d << ": " << res[d] << endl;$/;"	l	language:C++
 erase	src/huffman_coding.h	/^  arr_.erase(arr_.begin() + static_cast<long>(size()) - 1);$/;"	p	language:C++	signature:(arr_.begin() + static_cast<long>(size()) - 1)
+exchange	src/coins.cc	/^map<int, int> exchange(vector<int> deno, int num) {$/;"	f	language:C++	signature:(vector<int> deno, int num)
 features	build/CMakeFiles/feature_tests.c	/^  const char features[] = {""$/;"	v	language:C
 features	build/CMakeFiles/feature_tests.cxx	/^  const char features[] = {""$/;"	v	language:C++
 find_smallest	src/huffman_coding1.cc	/^  auto find_smallest = [&]() {$/;"	l	language:C++
@@ -783,6 +794,7 @@ get_code	src/huffman_coding.h	/^  std::string get_code(char);$/;"	p	language:C++
 get_code	src/huffman_coding1.cc	/^string HuffmanCode1::get_code(char ch) {$/;"	f	language:C++	class:HuffmanCode1	signature:(char ch)
 get_code	src/huffman_coding1.h	/^  std::string get_code(char ch);$/;"	p	language:C++	class:HuffmanCode1	access:public	signature:(char ch)
 get_min	src/huffman_coding.h	/^  T get_min() { return arr_[0]; }$/;"	f	language:C++	class:MinHeap	access:public	signature:()
+get_selection	src/job_sequencing.cc	/^vector<Job> get_selection(vector<Job> jobs) {$/;"	f	language:C++	signature:(vector<Job> jobs)
 hn1	src/huffman_coding.cc	/^    auto hn1 = new HuffmanNode(mh_.ExtractMin());$/;"	l	language:C++
 hn2	src/huffman_coding.cc	/^    auto hn2 = new HuffmanNode(mh_.ExtractMin());$/;"	l	language:C++
 huffman_coding	src/main.cc	/^void huffman_coding() {$/;"	f	language:C++	signature:()
@@ -790,6 +802,7 @@ huffman_coding	src/main.cc	/^void huffman_coding();$/;"	p	language:C++	file:	sig
 huffman_coding1	src/main.cc	/^void huffman_coding1() {$/;"	f	language:C++	signature:()
 huffman_coding1	src/main.cc	/^void huffman_coding1();$/;"	p	language:C++	file:	signature:()
 i	src/activity_selection.cc	/^  vector<activity>::size_type i = 0;$/;"	l	language:C++
+id	src/job_sequencing.h	/^  std::string id;$/;"	m	language:C++	struct:Job	access:public
 info_arch	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	language:C
 info_arch	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	language:C++
 info_arch	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	language:C
@@ -816,6 +829,8 @@ info_version	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const 
 info_version	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	language:C++
 is_leaf	src/huffman_coding.h	/^  bool is_leaf(const HuffmanNode &hn) { return hn.data != ' '; }$/;"	f	language:C++	class:HuffmanCode	access:private	signature:(const HuffmanNode &hn)
 is_leaf	src/huffman_coding1.h	/^  bool is_leaf(const HuffmanNode1 &hn) { return hn.data != ' '; }$/;"	f	language:C++	class:HuffmanCode1	access:private	signature:(const HuffmanNode1 &hn)
+job_sequencing	src/job_sequencing.cc	/^void job_sequencing() {$/;"	f	language:C++	signature:()
+job_sequencing	src/job_sequencing.h	/^void job_sequencing();$/;"	p	language:C++	signature:()
 left	src/huffman_coding.h	/^  struct HuffmanNode *left;$/;"	m	language:C++	struct:HuffmanNode	typeref:struct:HuffmanNode::HuffmanNode	access:public
 left	src/huffman_coding.h	/^  typename std::vector<T>::size_type left($/;"	f	language:C++	class:MinHeap	access:private	signature:( typename std::vector<T>::size_type idx)
 left	src/huffman_coding1.h	/^  struct HuffmanNode1 *left;$/;"	m	language:C++	struct:HuffmanNode1	typeref:struct:HuffmanNode1::HuffmanNode1	access:public
@@ -840,7 +855,9 @@ parent	src/huffman_coding.h	/^  typename std::vector<T>::size_type parent($/;"	f
 pop	src/huffman_coding1.cc	/^  q2.pop();$/;"	p	language:C++	file:	signature:()
 pop_back	src/huffman_coding.cc	/^    str.pop_back();$/;"	p	language:C++	file:	signature:()
 pop_back	src/huffman_coding1.cc	/^    str.pop_back();$/;"	p	language:C++	file:	signature:()
+profit	src/job_sequencing.h	/^  int profit;$/;"	m	language:C++	struct:Job	access:public
 push_back	src/huffman_coding.h	/^  arr_.push_back(key);$/;"	p	language:C++	signature:(key)
+push_back	src/job_sequencing.cc	/^        ret.push_back(job);$/;"	p	language:C++	file:	signature:(job)
 q1	src/huffman_coding1.cc	/^  queue<HuffmanNode1> q1;$/;"	l	language:C++
 q2	src/huffman_coding1.cc	/^  queue<HuffmanNode1> q2;$/;"	l	language:C++
 qnxnto	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C
@@ -851,13 +868,18 @@ require	build/CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c	/^  int require = 
 require	build/CMakeFiles/3.3.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l	language:C++
 require	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l	language:C
 require	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l	language:C++
+res	src/coins.cc	/^  auto res = exchange(deno, 999);$/;"	l	language:C++
+res	src/job_sequencing.cc	/^  auto res = get_selection(jobs);$/;"	l	language:C++
+ret	src/coins.cc	/^  map<int, int> ret;$/;"	l	language:C++
 ret	src/huffman_coding.cc	/^  auto ret =$/;"	l	language:C++
 ret	src/huffman_coding.h	/^  T ret = get_min();$/;"	l	language:C++
 ret	src/huffman_coding1.cc	/^  auto ret =$/;"	l	language:C++
+ret	src/job_sequencing.cc	/^  vector<Job> ret;$/;"	l	language:C++
 right	src/huffman_coding.h	/^  struct HuffmanNode *right;$/;"	m	language:C++	struct:HuffmanNode	typeref:struct:HuffmanNode::HuffmanNode	access:public
 right	src/huffman_coding.h	/^  typename std::vector<T>::size_type right($/;"	f	language:C++	class:MinHeap	access:private	signature:( typename std::vector<T>::size_type idx)
 right	src/huffman_coding1.h	/^  struct HuffmanNode1 *right;$/;"	m	language:C++	struct:HuffmanNode1	typeref:struct:HuffmanNode1::HuffmanNode1	access:public
 size	src/huffman_coding.h	/^  typename std::vector<T>::size_type size() { return arr_.size(); }$/;"	f	language:C++	class:MinHeap	access:public	signature:()
+slot	src/job_sequencing.cc	/^  vector<bool> slot(jobs.size(), true);$/;"	p	language:C++	file:	signature:(jobs.size(), true)
 smalleat_idx	src/huffman_coding.h	/^  auto smalleat_idx = idx;$/;"	l	language:C++
 start_time	src/activity_selection.h	/^  int start_time;$/;"	m	language:C++	struct:activity	access:public
 static_cast	src/huffman_coding.h	/^    MinHeapify(static_cast<typename std::vector<T>::size_type>(i));$/;"	p	language:C++	signature:(i)

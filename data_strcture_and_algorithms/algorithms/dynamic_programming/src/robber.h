@@ -1,10 +1,6 @@
-//
-// Created by chaomai on 6/17/15.
-//
+#ifndef ROBBER
+#define ROBBER
 
-#ifndef DATA_STRCTURE_AND_ALGORITHMS_ROBBER_H
-#define DATA_STRCTURE_AND_ALGORITHMS_ROBBER_H
+void Robber();
 
-int rob(int *nums, int numsSize);
-
-#endif //DATA_STRCTURE_AND_ALGORITHMS_ROBBER_H
+#endif
