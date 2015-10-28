@@ -1,5 +1,5 @@
-#ifndef MIN_COST_PATH
-#define MIN_COST_PATH
+#ifndef MIN_COST_PATH_H_
+#define MIN_COST_PATH_H_
 
 void MinCostPath();
 

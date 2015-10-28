@@ -30,6 +30,7 @@ ARCHITECTURE_ID	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	399;
 ARCHITECTURE_ID	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	402;"	d	language:C++	file:
 ARCHITECTURE_ID	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	405;"	d	language:C++	file:
 ARCHITECTURE_ID	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	409;"	d	language:C++	file:
+CLIMB_STAIRS_H	src/climb_stairs.h	2;"	d	language:C++
 CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/chaomai\/Documents\/Codes\/Current\/GitHub\/learning\/data_strcture_and_algorithms\/algorithms\/dynamic_programming\/build$/;"	m	language:Make
 CMAKE_COMMAND	build/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m	language:Make
 CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/chaomai\/Documents\/Codes\/Current\/GitHub\/learning\/data_strcture_and_algorithms\/algorithms\/dynamic_programming$/;"	m	language:Make
@@ -239,13 +240,26 @@ COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	28;
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	167;"	d	language:C++	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	206;"	d	language:C++	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	d	language:C++	file:
+Climb	src/climb_stairs.cc	/^int Climb(vector<int>& cache, size_t i) {$/;"	f	language:C++	signature:(vector<int>& cache, size_t i)
+Climb	src/climb_stairs.cc	/^int Climb(vector<int>& cache, size_t i);$/;"	p	language:C++	file:	signature:(vector<int>& cache, size_t i)
+ClimbStaris	src/climb_stairs.cc	/^void ClimbStaris() {$/;"	f	language:C++	signature:()
+ClimbStaris	src/climb_stairs.h	/^void ClimbStaris();$/;"	p	language:C++	signature:()
 DEC	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	418;"	d	language:C	file:
 DEC	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	413;"	d	language:C++	file:
 EQUALS	build/Makefile	/^EQUALS = =$/;"	m	language:Make
 HEX	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	429;"	d	language:C	file:
 HEX	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	424;"	d	language:C++	file:
 ID_VOID_MAIN	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	language:C	file:
-MIN_COST_PATH	src/min_cost_path.h	2;"	d	language:C++
+LONGEST_INCREASING_SUBSEQUENCE_H_	src/longest_increasing_subsequence.h	2;"	d	language:C++
+Lis	src/longest_increasing_subsequence.cc	/^int Lis(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i) {$/;"	f	language:C++	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i)
+Lis	src/longest_increasing_subsequence.cc	/^int Lis(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);$/;"	p	language:C++	file:	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i)
+Lis2	src/longest_increasing_subsequence.cc	/^int Lis2(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);$/;"	p	language:C++	file:	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i)
+Lis2	src/longest_increasing_subsequence.cc	/^int Lis2(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s) {$/;"	f	language:C++	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s)
+Lis3	src/longest_increasing_subsequence.cc	/^int Lis3(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);$/;"	p	language:C++	file:	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i)
+Lis3	src/longest_increasing_subsequence.cc	/^int Lis3(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s) {$/;"	f	language:C++	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s)
+LongestIncreasingSubsequence	src/longest_increasing_subsequence.cc	/^void LongestIncreasingSubsequence() {$/;"	f	language:C++	signature:()
+LongestIncreasingSubsequence	src/longest_increasing_subsequence.h	/^void LongestIncreasingSubsequence();$/;"	p	language:C++	signature:()
+MIN_COST_PATH_H_	src/min_cost_path.h	2;"	d	language:C++
 MaxRobbed	src/robber.cc	/^int MaxRobbed(vector<int>& nums, vector<int>& cache, size_t i) {$/;"	f	language:C++	signature:(vector<int>& nums, vector<int>& cache, size_t i)
 MaxRobbed	src/robber.cc	/^int MaxRobbed(vector<int>& nums, vector<int>& cache, size_t i);$/;"	p	language:C++	file:	signature:(vector<int>& nums, vector<int>& cache, size_t i)
 MinCostPath	src/min_cost_path.cc	/^void MinCostPath() {$/;"	f	language:C++	signature:()
@@ -315,7 +329,7 @@ PLATFORM_ID	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	352;"	d	
 PLATFORM_ID	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	355;"	d	language:C++	file:
 PLATFORM_ID	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	359;"	d	language:C++	file:
 RM	build/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m	language:Make
-ROBBER	src/robber.h	2;"	d	language:C++
+ROBBER_H_	src/robber.h	2;"	d	language:C++
 Robber	src/robber.cc	/^void Robber() {$/;"	f	language:C++	signature:()
 Robber	src/robber.h	/^void Robber();$/;"	p	language:C++	signature:()
 SHELL	build/Makefile	/^SHELL = \/bin\/sh$/;"	m	language:Make
@@ -342,8 +356,15 @@ STRINGIFY	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	263;"	d	la
 STRINGIFY_HELPER	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	267;"	d	language:C	file:
 STRINGIFY_HELPER	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	262;"	d	language:C++	file:
 SUFFIXES	build/Makefile	/^SUFFIXES =$/;"	m	language:Make
+UTIL_H_	src/util.h	2;"	d	language:C++
+cache	src/longest_increasing_subsequence.cc	/^  vector<int> cache;$/;"	l	language:C++
 cache	src/min_cost_path.cc	/^  vector<vector<int>> cache(grid.size(), vector<int>(grid.front().size(), -1));$/;"	p	language:C++	file:	signature:(grid.size(), vector<int>(grid.front().size(), -1))
 cache	src/robber.cc	/^  vector<int> cache(nums.size(), -1);$/;"	p	language:C++	file:	signature:(nums.size(), -1)
+cur_max	src/longest_increasing_subsequence.cc	/^  int cur_max = -1;$/;"	l	language:C++
+endl	src/longest_increasing_subsequence.cc	/^    cout << "Lis2:" << endl;$/;"	l	language:C++
+endl	src/longest_increasing_subsequence.cc	/^    cout << "Lis3:" << endl;$/;"	l	language:C++
+endl	src/longest_increasing_subsequence.cc	/^    cout << "Lis:" << endl;$/;"	l	language:C++
+endl	src/util.h	/^              << std::endl;$/;"	m	language:C++	class:timer::std
 features	build/CMakeFiles/feature_tests.c	/^  const char features[] = {""$/;"	v	language:C
 features	build/CMakeFiles/feature_tests.cxx	/^  const char features[] = {""$/;"	v	language:C++
 info_arch	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	language:C
@@ -359,15 +380,30 @@ info_simulate_version	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cp
 info_version	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v	language:C
 info_version	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	language:C++
 insert	src/robber.cc	/^  nums.insert(nums.begin(), 2, 0);$/;"	p	language:C++	file:	signature:(nums.begin(), 2, 0)
+l	src/longest_increasing_subsequence.cc	/^  int l = cache[0];$/;"	l	language:C++
+len	src/longest_increasing_subsequence.cc	/^    int len = Lis(seq, cache, j);$/;"	l	language:C++
 main	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f	language:C	signature:(int argc, char* argv[])
 main	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	language:C
 main	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	language:C++	signature:(int argc, char* argv[])
 main	build/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	language:C	signature:(int argc, char** argv)
 main	build/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	language:C++	signature:(int argc, char** argv)
 main	src/main.cc	/^int main() {$/;"	f	language:C++	signature:()
+n	src/climb_stairs.cc	/^  size_t n = 10;$/;"	l	language:C++
 qnxnto	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C
 qnxnto	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C++
 require	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l	language:C
 require	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l	language:C++
+ret	src/climb_stairs.cc	/^  int ret;$/;"	l	language:C++
+ret	src/longest_increasing_subsequence.cc	/^  int ret;$/;"	l	language:C++
 ret	src/min_cost_path.cc	/^  int ret;$/;"	l	language:C++
 ret	src/robber.cc	/^  int ret;$/;"	l	language:C++
+starting_time	src/util.h	/^  std::chrono::high_resolution_clock::time_point starting_time;$/;"	m	language:C++	class:timer	access:private
+startj	src/longest_increasing_subsequence.cc	/^  vector<int>::size_type startj = 0;$/;"	l	language:C++
+t	src/longest_increasing_subsequence.cc	/^    timer t;$/;"	l	language:C++
+timer	src/util.h	/^  timer() { starting_time = std::chrono::high_resolution_clock::now(); }$/;"	f	language:C++	class:timer	access:public	signature:()
+timer	src/util.h	/^class timer {$/;"	c	language:C++
+timer::starting_time	src/util.h	/^  std::chrono::high_resolution_clock::time_point starting_time;$/;"	m	language:C++	class:timer	access:private
+timer::std::endl	src/util.h	/^              << std::endl;$/;"	m	language:C++	class:timer::std
+timer::timer	src/util.h	/^  timer() { starting_time = std::chrono::high_resolution_clock::now(); }$/;"	f	language:C++	class:timer	access:public	signature:()
+timer::~timer	src/util.h	/^  ~timer() {$/;"	f	language:C++	class:timer	access:public	signature:()
+~timer	src/util.h	/^  ~timer() {$/;"	f	language:C++	class:timer	access:public	signature:()
