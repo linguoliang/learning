@@ -257,6 +257,8 @@ Lis2	src/longest_increasing_subsequence.cc	/^int Lis2(const vector<int>& seq, ve
 Lis2	src/longest_increasing_subsequence.cc	/^int Lis2(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s) {$/;"	f	language:C++	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s)
 Lis3	src/longest_increasing_subsequence.cc	/^int Lis3(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);$/;"	p	language:C++	file:	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i)
 Lis3	src/longest_increasing_subsequence.cc	/^int Lis3(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s) {$/;"	f	language:C++	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s)
+Lis4	src/longest_increasing_subsequence.cc	/^int Lis4(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);$/;"	p	language:C++	file:	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i)
+Lis4	src/longest_increasing_subsequence.cc	/^int Lis4(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s) {$/;"	f	language:C++	signature:(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s)
 LongestIncreasingSubsequence	src/longest_increasing_subsequence.cc	/^void LongestIncreasingSubsequence() {$/;"	f	language:C++	signature:()
 LongestIncreasingSubsequence	src/longest_increasing_subsequence.h	/^void LongestIncreasingSubsequence();$/;"	p	language:C++	signature:()
 MIN_COST_PATH_H_	src/min_cost_path.h	2;"	d	language:C++
@@ -363,7 +365,12 @@ cache	src/robber.cc	/^  vector<int> cache(nums.size(), -1);$/;"	p	language:C++	f
 cur_max	src/longest_increasing_subsequence.cc	/^  int cur_max = -1;$/;"	l	language:C++
 endl	src/longest_increasing_subsequence.cc	/^    cout << "Lis2:" << endl;$/;"	l	language:C++
 endl	src/longest_increasing_subsequence.cc	/^    cout << "Lis3:" << endl;$/;"	l	language:C++
+endl	src/longest_increasing_subsequence.cc	/^    cout << "Lis4:" << endl;$/;"	l	language:C++
 endl	src/longest_increasing_subsequence.cc	/^    cout << "Lis:" << endl;$/;"	l	language:C++
+endl	src/longest_increasing_subsequence.cc	/^    cout << endl;$/;"	l	language:C++
+endl	src/longest_increasing_subsequence.cc	/^  cout << "continuous subsequence" << endl;$/;"	l	language:C++
+endl	src/longest_increasing_subsequence.cc	/^  cout << "not continuous subsequence" << endl;$/;"	l	language:C++
+endl	src/longest_increasing_subsequence.cc	/^  cout << endl;$/;"	l	language:C++
 endl	src/util.h	/^              << std::endl;$/;"	m	language:C++	class:timer::std
 features	build/CMakeFiles/feature_tests.c	/^  const char features[] = {""$/;"	v	language:C
 features	build/CMakeFiles/feature_tests.cxx	/^  const char features[] = {""$/;"	v	language:C++
@@ -388,7 +395,9 @@ main	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int 
 main	build/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	language:C	signature:(int argc, char** argv)
 main	build/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f	language:C++	signature:(int argc, char** argv)
 main	src/main.cc	/^int main() {$/;"	f	language:C++	signature:()
+max_index	src/longest_increasing_subsequence.cc	/^  int max_index = 0;$/;"	l	language:C++
 n	src/climb_stairs.cc	/^  size_t n = 10;$/;"	l	language:C++
+prev	src/longest_increasing_subsequence.cc	/^  vector<int> prev(seq.size(), -1);$/;"	p	language:C++	file:	signature:(seq.size(), -1)
 qnxnto	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C
 qnxnto	build/CMakeFiles/3.3.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	language:C++
 require	build/CMakeFiles/3.3.2/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l	language:C
@@ -397,6 +406,7 @@ ret	src/climb_stairs.cc	/^  int ret;$/;"	l	language:C++
 ret	src/longest_increasing_subsequence.cc	/^  int ret;$/;"	l	language:C++
 ret	src/min_cost_path.cc	/^  int ret;$/;"	l	language:C++
 ret	src/robber.cc	/^  int ret;$/;"	l	language:C++
+seq	src/longest_increasing_subsequence.cc	/^    cout << seq[i] << ", ";$/;"	l	language:C++
 starting_time	src/util.h	/^  std::chrono::high_resolution_clock::time_point starting_time;$/;"	m	language:C++	class:timer	access:private
 startj	src/longest_increasing_subsequence.cc	/^  vector<int>::size_type startj = 0;$/;"	l	language:C++
 t	src/longest_increasing_subsequence.cc	/^    timer t;$/;"	l	language:C++

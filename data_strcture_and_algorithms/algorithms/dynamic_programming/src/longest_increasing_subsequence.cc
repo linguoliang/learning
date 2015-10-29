@@ -15,6 +15,7 @@ using std::vector;
 int Lis(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);
 int Lis2(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);
 int Lis3(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);
+int Lis4(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i);
 
 void LongestIncreasingSubsequence() {
   vector<int> seq1{10, 22, 9, 33, 21, 50, 41, 60};
@@ -861,8 +862,11 @@ void LongestIncreasingSubsequence() {
 
   vector<int> cache;
 
+  cout << endl;
+  cout << "continuous subsequence" << endl;
   {
     timer t;
+    cout << endl;
     cout << "Lis:" << endl;
     cache = vector<int>(seq1.size(), -1);
     cout << Lis(seq1, cache, seq1.size() - 1) << endl;
@@ -876,6 +880,7 @@ void LongestIncreasingSubsequence() {
 
   {
     timer t;
+    cout << endl;
     cout << "Lis2:" << endl;
     cache = vector<int>(seq1.size(), -1);
     cout << Lis2(seq1, cache, seq1.size() - 1) << endl;
@@ -889,6 +894,7 @@ void LongestIncreasingSubsequence() {
 
   {
     timer t;
+    cout << endl;
     cout << "Lis3:" << endl;
     cache = vector<int>(seq1.size(), -1);
     cout << Lis3(seq1, cache, seq1.size() - 1) << endl;
@@ -898,6 +904,22 @@ void LongestIncreasingSubsequence() {
     cout << Lis3(seq3, cache, seq3.size() - 1) << endl;
     cache = vector<int>(seq4.size(), -1);
     cout << Lis3(seq4, cache, seq4.size() - 1) << endl;
+  }
+
+  cout << endl;
+  cout << "not continuous subsequence" << endl;
+  {
+    timer t;
+    cout << endl;
+    cout << "Lis4:" << endl;
+    cache = vector<int>(seq1.size(), -1);
+    cout << Lis4(seq1, cache, seq1.size() - 1) << endl;
+    cache = vector<int>(seq2.size(), -1);
+    cout << Lis4(seq2, cache, seq2.size() - 1) << endl;
+    cache = vector<int>(seq3.size(), -1);
+    cout << Lis4(seq3, cache, seq3.size() - 1) << endl;
+    cache = vector<int>(seq4.size(), -1);
+    cout << Lis4(seq4, cache, seq4.size() - 1) << endl;
   }
 }
 
@@ -915,9 +937,12 @@ int Lis(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i) {
   }
 
   int cur_max = -1;
+  // select the biggest j from [0, i)
   for (vector<int>::size_type j = 0; j < i; ++j) {
     // continuous subsequence
     int len = Lis(seq, cache, j);
+
+    // select the biggest
     if (seq[j] < seq[i] && cur_max < len + 1 && i == j + 1) {
       cur_max = len + 1;
     }
@@ -980,6 +1005,43 @@ int Lis3(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s) {
       l = cache[i];
     }
   }
+
+  return l;
+}
+
+int Lis4(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s) {
+  cache[0] = 1;
+  int l = cache[0];
+  int max_index = 0;
+  vector<int> prev(seq.size(), -1);
+
+  for (vector<int>::size_type i = 0; i < seq.size(); ++i) {
+    for (vector<int>::size_type j = 0; j < i; j++) {
+      if (seq[j] < seq[i] && cache[i] < cache[j] + 1) {
+        cache[i] = cache[j] + 1;
+        prev[i] = j;
+      }
+    }
+
+    if (cache[i] == -1) {
+      cache[i] = 1;
+    }
+
+    if (l < cache[i]) {
+      l = cache[i];
+      max_index = i;
+    }
+  }
+
+  cout << endl;
+
+  // the first element of prev is always -1.
+  // because it won't be set.
+  for (int i = max_index; i != -1; i = prev[i]) {
+    cout << seq[i] << ", ";
+  }
+
+  cout << endl;
 
   return l;
 }
