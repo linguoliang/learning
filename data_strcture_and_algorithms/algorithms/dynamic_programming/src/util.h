@@ -2,6 +2,7 @@
 #define UTIL_H_
 
 #include <chrono>
+#include <iostream>
 
 class timer {
  public:
@@ -18,5 +19,15 @@ class timer {
  private:
   std::chrono::high_resolution_clock::time_point starting_time;
 };
+
+template <typename T>
+void PrintArray(std::vector<std::vector<T>> arr) {
+  for (auto i : arr) {
+    for (auto j : i) {
+      std::cout << j << "\t";
+    }
+    std::cout << std::endl;
+  }
+}
 
 #endif
