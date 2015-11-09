@@ -1,6 +1,7 @@
 #ifndef UTIL_H_
 #define UTIL_H_
 
+#include <algorithm>
 #include <chrono>
 #include <iostream>
 
@@ -28,6 +29,16 @@ void PrintArray(std::vector<std::vector<T>> arr) {
     }
     std::cout << std::endl;
   }
+}
+
+template <typename T>
+T max(T a, T b, T c) {
+  return std::max(std::max(a, b), c);
+}
+
+template <typename T>
+T min(T a, T b, T c) {
+  return std::min(std::min(a, b), c);
 }
 
 #endif
