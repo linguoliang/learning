@@ -13,8 +13,7 @@ int Change1(vector<vector<int>>& cache, const vector<int>& coins, int n, int m);
 int Change2(const vector<int>& coins, int n);
 
 void CoinChange() {
-  // vector<int> coins{1, 2, 3};
-  vector<int> coins{3, 1, 2};
+  vector<int> coins{3, 1, 2, 4};
   int n = 4;
 
   vector<vector<int>> cache(n + 1, vector<int>(coins.size(), -1));
