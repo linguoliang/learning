@@ -2,6 +2,7 @@
 #include "climb_stairs.h"
 #include "coin_change.h"
 #include "edit_distance.h"
+#include "egg_drop.h"
 #include "knapsack.h"
 #include "longest_common_subsequence.h"
 #include "longest_increasing_subsequence.h"
@@ -14,7 +15,8 @@ int main() {
   // ClimbStaris();
   // CoinChange();
   // EditDistance();
-  Knapsack();
+  EggDrop();
+  // Knapsack();
   // LongestCommonSubsequence();
   // LongestIncreasingSubsequence();
   // MatrixChain();

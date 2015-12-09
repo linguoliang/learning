@@ -12,7 +12,6 @@ using std::vector;
 
 int Chain1(vector<vector<int>>& cache, const vector<int>& dimensions, int i,
            int j);
-int Chain2(const vector<int>& dimensions);
 
 void MatrixChain() {
   vector<int> dimensions{1,  2,  3,  4,  3,  1,  2,   3,   4,   5,   6,  7,  8,
@@ -23,7 +22,6 @@ void MatrixChain() {
   vector<vector<int>> cache(dimensions.size(),
                             vector<int>(dimensions.size(), -1));
   cout << Chain1(cache, dimensions, 1, dimensions.size() - 1) << endl;
-  cout << Chain2(dimensions) << endl;
 }
 
 int Chain1(vector<vector<int>>& cache, const vector<int>& dimensions, int i,
@@ -47,5 +45,3 @@ int Chain1(vector<vector<int>>& cache, const vector<int>& dimensions, int i,
   cache[i][j] = min_ops;
   return min_ops;
 }
-
-int Chain2(const vector<int>& dimensions) {}

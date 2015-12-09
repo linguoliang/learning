@@ -24,6 +24,7 @@ class timer {
 
 template <typename T>
 void PrintArray(std::vector<std::vector<T>> arr) {
+  std::cout << std::endl;
   for (auto i : arr) {
     for (auto j : i) {
       std::cout << j << "\t";
