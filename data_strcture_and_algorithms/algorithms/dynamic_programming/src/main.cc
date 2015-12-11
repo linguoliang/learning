@@ -6,6 +6,7 @@
 #include "knapsack.h"
 #include "longest_common_subsequence.h"
 #include "longest_increasing_subsequence.h"
+#include "longest_palindromic_subsequence.h"
 #include "matrix_chain.h"
 #include "min_cost_path.h"
 #include "robber.h"
@@ -15,10 +16,11 @@ int main() {
   // ClimbStaris();
   // CoinChange();
   // EditDistance();
-  EggDrop();
+  // EggDrop();
   // Knapsack();
   // LongestCommonSubsequence();
   // LongestIncreasingSubsequence();
+  LongestPalindromicSubsequence();
   // MatrixChain();
   // MinCostPath();
   // Robber();
