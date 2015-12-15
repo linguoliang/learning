@@ -1,6 +1,7 @@
 #include "binomial_coefficient.h"
 #include "climb_stairs.h"
 #include "coin_change.h"
+#include "cutting_rod.h"
 #include "edit_distance.h"
 #include "egg_drop.h"
 #include "knapsack.h"
@@ -15,12 +16,13 @@ int main() {
   // BinomialCoefficient();
   // ClimbStaris();
   // CoinChange();
+  CuttingRod();
   // EditDistance();
   // EggDrop();
   // Knapsack();
   // LongestCommonSubsequence();
   // LongestIncreasingSubsequence();
-  LongestPalindromicSubsequence();
+  // LongestPalindromicSubsequence();
   // MatrixChain();
   // MinCostPath();
   // Robber();
