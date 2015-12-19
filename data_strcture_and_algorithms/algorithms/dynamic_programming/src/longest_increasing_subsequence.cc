@@ -859,8 +859,21 @@ void LongestIncreasingSubsequence() {
       9973, 9974, 9975, 9976, 9977, 9978, 9979, 9980, 9981, 9982, 9983, 9984,
       9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992, 9993, 9994, 9995, 9996,
       9997, 9998, 9999, 10000};
+  vector<int> seq5{1, 101, 2, 3, 100, 102, 103, 104, 105, 106, 4, 5};
 
   vector<int> cache;
+
+  cout << endl;
+  cout << "Seq5" << endl;
+  cache = vector<int>(seq5.size(), -1);
+  Lis(seq5, cache, seq5.size() - 1);
+  cout << *max_element(cache.begin(), cache.end()) << endl;
+  cache = vector<int>(seq5.size(), -1);
+  cout << Lis2(seq5, cache, seq5.size() - 1) << endl;
+  cache = vector<int>(seq5.size(), -1);
+  cout << Lis3(seq5, cache, seq5.size() - 1) << endl;
+  cache = vector<int>(seq5.size(), -1);
+  cout << Lis4(seq5, cache, seq5.size() - 1) << endl;
 
   cout << endl;
   cout << "continuous subsequence" << endl;
@@ -869,13 +882,17 @@ void LongestIncreasingSubsequence() {
     cout << endl;
     cout << "Lis:" << endl;
     cache = vector<int>(seq1.size(), -1);
-    cout << Lis(seq1, cache, seq1.size() - 1) << endl;
+    Lis(seq1, cache, seq1.size() - 1);
+    cout << *max_element(cache.begin(), cache.end()) << endl;
     cache = vector<int>(seq2.size(), -1);
-    cout << Lis(seq2, cache, seq2.size() - 1) << endl;
+    Lis(seq2, cache, seq2.size() - 1);
+    cout << *max_element(cache.begin(), cache.end()) << endl;
     cache = vector<int>(seq3.size(), -1);
-    cout << Lis(seq3, cache, seq3.size() - 1) << endl;
+    Lis(seq3, cache, seq3.size() - 1);
+    cout << *max_element(cache.begin(), cache.end()) << endl;
     cache = vector<int>(seq4.size(), -1);
-    cout << Lis(seq4, cache, seq4.size() - 1) << endl;
+    Lis(seq4, cache, seq4.size() - 1);
+    cout << *max_element(cache.begin(), cache.end()) << endl;
   }
 
   {
@@ -936,14 +953,15 @@ int Lis(const vector<int>& seq, vector<int>& cache, vector<int>::size_type i) {
     ret = 1;
   }
 
+  // note!!! the cur_max is the max length until position i.
+  // not the global longest.
   int cur_max = -1;
   // select the biggest j from [0, i)
   for (vector<int>::size_type j = 0; j < i; ++j) {
-    // continuous subsequence
     int len = Lis(seq, cache, j);
 
     // select the biggest
-    if (seq[j] < seq[i] && cur_max < len + 1 && i == j + 1) {
+    if (seq[j] < seq[i] && cur_max < len + 1) {
       cur_max = len + 1;
     }
   }
@@ -963,7 +981,7 @@ int Lis2(const vector<int>& seq, vector<int>& cache, vector<int>::size_type s) {
 
   for (vector<int>::size_type i = 0; i < seq.size(); ++i) {
     for (vector<int>::size_type j = 0; j < i; j++) {
-      if (seq[j] < seq[i] && cache[i] < cache[j] + 1 && i == j + 1) {
+      if (seq[j] < seq[i] && cache[i] < cache[j] + 1) {
         cache[i] = cache[j] + 1;
       }
     }
