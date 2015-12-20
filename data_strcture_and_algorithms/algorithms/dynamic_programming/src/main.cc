@@ -27,9 +27,10 @@ int main() {
   // LongestCommonSubsequence();
   // LongestIncreasingSubsequence();
   // LongestPalindromicSubsequence();
-  MatrixChain();
+  // MatrixChain();
   // MaximumSumIncreasingSubsequence();
   // MinCostPath();
+  PalidromePartitioning();
   // Robber();
   return 0;
 }
