@@ -15,8 +15,8 @@ using std::string;
 using std::vector;
 
 int partition1(const string& str, int i, int j);
-bool isPalidrome(const string& str, int i, int j);
 int partition2(const string& str);
+bool isPalidrome(const string& str, int i, int j);
 
 void PalidromePartitioning() {
   string str{"ababbbabbababa"};
@@ -40,21 +40,8 @@ int partition1(const string& str, int i, int j) {
   return min_cost;
 }
 
-bool isPalidrome(const string& str, int i, int j) {
-  while (i < j) {
-    if (str[i] != str[j]) {
-      return false;
-    }
-
-    ++i;
-    --j;
-  }
-
-  return true;
-}
-
 int partition2(const string& str) {
-  vector<vector<int>> dp(str.size(), vector<int>(str.size(), -1));
+  vector<vector<int>> dp(str.size(), vector<int>(str.size(), 0));
   int n = str.size();
 
   for (int i = 0; i < n; ++i) {
@@ -67,15 +54,26 @@ int partition2(const string& str) {
       if (isPalidrome(str, i, j)) {
         dp[i][j] = 0;
       } else {
-        int min_cost = INT_MAX;
-        for (int k = 0; k <= j - 1; ++k) {
-          min_cost = min(dp[i][k] + dp[k + 1][j] + 1, min_cost);
+        dp[i][j] = INT_MAX;
+        for (int k = i; k <= j - 1; ++k) {
+          dp[i][j] = min(dp[i][k] + dp[k + 1][j] + 1, dp[i][j]);
         }
-        dp[i][j] = min_cost;
       }
     }
   }
 
-  PrintArray(dp);
   return dp[0][n - 1];
+}
+
+bool isPalidrome(const string& str, int i, int j) {
+  while (i < j) {
+    if (str[i] != str[j]) {
+      return false;
+    }
+
+    ++i;
+    --j;
+  }
+
+  return true;
 }
