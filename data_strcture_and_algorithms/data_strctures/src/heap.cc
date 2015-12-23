@@ -37,7 +37,7 @@ void MinHeap::InsertKey(int k) {
 
 void MinHeap::AdjustKeyUp(int i) {
   while (i != 0 && arr_[Parent(i)] > arr_[i]) {
-    Swap(&arr_[Parent(i)], &arr_[i]);
+    swap(arr_[Parent(i)], arr_[i]);
     i = Parent(i);
   }
 }
@@ -61,7 +61,7 @@ void MinHeap::MinHeapify(int i) {
   }
 
   if (smallest != i) {
-    Swap(&arr_[smallest], &arr_[i]);
+    swap(arr_[smallest], arr_[i]);
     MinHeapify(smallest);
   }
 }

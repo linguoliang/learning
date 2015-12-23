@@ -16,6 +16,7 @@
 #include "partition.h"
 #include "partition3.h"
 #include "robber.h"
+#include "word_wrap.h"
 
 int main() {
   // BinomialCoefficient();
@@ -34,7 +35,8 @@ int main() {
   // MinCostPath();
   // PalidromePartitioning();
   // Partition();
-  Partition3();
+  // Partition3();
   // Robber();
+  WordWrap();
   return 0;
 }

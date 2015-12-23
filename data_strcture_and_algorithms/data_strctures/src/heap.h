@@ -1,17 +1,16 @@
 #ifndef HEAP_H_
 #define HEAP_H_
 
+#include <algorithm>
 #include <climits>
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
 
-#include "utility.h"
-
 using std::cout;
 using std::endl;
 using std::memmove;
-using utility::Swap;
+using std::swap;
 
 class MinHeap {
  public:
