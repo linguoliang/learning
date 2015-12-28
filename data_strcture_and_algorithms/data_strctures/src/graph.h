@@ -17,6 +17,9 @@ class Graph {
   void DFSLoop(int v);
   void DFSRec();
   void DFSRec(int v);
+  void DFSColorRec();
+  void DFSColorUtil(int v, std::vector<int> &color, std::vector<int> &parents);
+  void DFSColorLoop();
 
  private:
   int vertices;

@@ -130,3 +130,61 @@ void Graph::DFSUtil(int v, vector<int> &distance, vector<int> &parents) {
     }
   }
 }
+
+void Graph::DFSColorRec() {
+  vector<int> color(this->vertices, 0);
+  vector<int> parents(this->vertices, -1);
+
+  for (int v = 0; v < this->vertices; ++v) {
+    if (color[v] == 0) {
+      DFSColorUtil(v, color, parents);
+    }
+  }
+  cout << endl;
+}
+
+void Graph::DFSColorUtil(int v, vector<int> &color, vector<int> &parents) {
+  color[v] = 1;
+  cout << v << " ";
+
+  for (int n : this->adj[v]) {
+    if (color[n] == 0) {
+      parents[n] = v;
+      DFSColorUtil(n, color, parents);
+    }
+  }
+
+  color[v] = 2;
+}
+
+void Graph::DFSColorLoop() {
+  vector<int> color(this->vertices, 0);
+  vector<int> parents(this->vertices, -1);
+
+  stack<int> s;
+
+  for (int v = 0; v < this->vertices; ++v) {
+    if (color[v] == 0) {
+      s.push(v);
+
+      while (!s.empty()) {
+        int cur = s.top();
+        s.pop();
+
+        cout << cur << " ";
+
+        color[cur] = 1;
+
+        for (int n : this->adj[cur]) {
+          if (color[n] == 0) {
+            parents[n] = cur;
+            s.push(n);
+          }
+        }
+
+        color[cur] = 2;
+      }
+    }
+  }
+  cout << endl;
+}

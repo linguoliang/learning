@@ -38,5 +38,7 @@ int main() {
   graph.DFSLoop(2);
   graph.DFSRec();
   graph.DFSRec(2);
+  graph.DFSColorRec();
+  graph.DFSColorLoop();
   return 0;
 }
