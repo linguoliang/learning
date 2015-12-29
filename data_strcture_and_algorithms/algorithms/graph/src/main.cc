@@ -4,8 +4,10 @@
 #include "detect_cycle_undir.h"
 #include "detect_cycle_undir2.h"
 #include "orienteer.h"
+#include "single_source_sp.h"
 
 int main() {
-  Orienteer();
+  // Orienteer();
+  SingleSourceSP();
   return 0;
 }

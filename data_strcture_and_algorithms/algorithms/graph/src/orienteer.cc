@@ -25,9 +25,7 @@ class Orienteering {
   void ReadMap();
 };
 
-void Orienteering::main() { ReadMap();
-
-}
+void Orienteering::main() { ReadMap(); }
 
 void Orienteering::ReadMap() {
   fstream fs;

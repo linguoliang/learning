@@ -10,9 +10,9 @@ using std::endl;
 using std::stack;
 using std::vector;
 
-void Graph::AddEdge(int v, int w) { this->adj[v].push_back(w); }
+void Graph1::AddEdge(int v, int w) { this->adj[v].push_back(w); }
 
-bool Graph::isCyclic() {
+bool Graph1::isCyclic() {
   vector<bool> isVisited(this->vertices, false);
   // 这里rec的作用一开始不是很好理解，可以把rec看做一个stack，记录遍历的路径，
   // 遍历的时候，把路径上的每一个node都push到rec里面，如果下一次遇到的node在rec里面出现，那么就有cycle。
@@ -28,7 +28,7 @@ bool Graph::isCyclic() {
   return false;
 }
 
-bool Graph::isCyclicUtil(int v, vector<bool>& isVisited, vector<bool>& rec) {
+bool Graph1::isCyclicUtil(int v, vector<bool>& isVisited, vector<bool>& rec) {
   if (!isVisited[v]) {
     isVisited[v] = true;
     rec[v] = true;
