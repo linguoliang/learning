@@ -10,7 +10,6 @@ class Graph {
     this->vertices = v;
     adj = new std::list<int>[v];
   }
-  ~Graph() { delete[] adj; }
   void AddEdge(int v, int w);
   void BFS(int v);
   void DFSLoop();

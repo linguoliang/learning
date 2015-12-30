@@ -7,7 +7,7 @@
 #include "single_source_sp.h"
 
 int main() {
-  // Orienteer();
-  SingleSourceSP();
+  Orienteer();
+  // SingleSourceSP();
   return 0;
 }
