@@ -92,12 +92,12 @@ class Orienteering {
   int w;
   int h;
   vector<vector<char>> m;
-  vector<pair<int, int>> cps;
-  pair<int, int> sp;
-  pair<int, int> ep;
+  vector<int> cps;
+  int sp;
+  int ep;
 
   void ReadMap();
-  void GetPath();
+  void CalDis();
   int getIndex(int i, int j) { return (i - 1) * (this->w - 2) + j - 1; }
   int getDistance(int s, int g, const vector<int>& p) {
     int count = 0;
@@ -112,7 +112,7 @@ class Orienteering {
 
 void Orienteering::main() {
   ReadMap();
-  GetPath();
+  CalDis();
 }
 
 void Orienteering::ReadMap() {
@@ -130,17 +130,17 @@ void Orienteering::ReadMap() {
       this->m[i][j] = ch;
 
       if (ch == '@') {
-        cps.push_back(make_pair(i, j));
+        cps.push_back(getIndex(i, j));
       } else if (ch == 'S') {
-        sp = make_pair(i, j);
+        sp = getIndex(i, j);
       } else if (ch == 'G') {
-        ep = make_pair(i, j);
+        ep = getIndex(i, j);
       }
     }
   }
 }
 
-void Orienteering::GetPath() {
+void Orienteering::CalDis() {
   OriGraph g((this->w - 2) * (this->h - 2));
 
   vector<vector<int>> direct{{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
@@ -160,35 +160,38 @@ void Orienteering::GetPath() {
     }
   }
 
-  if (this->cps.size() != 0) {
-    g.BellmanFord(getIndex(this->sp.first, this->sp.second));
-    vector<int> pos = g.p;
-    g.BellmanFord(getIndex(this->ep.first, this->ep.second));
-    vector<int> poe = g.p;
+  g.BellmanFord(this->sp);
+  vector<int> pos = g.p;
+  g.BellmanFord(this->ep);
+  vector<int> poe = g.p;
 
+  if (this->cps.size() > 1) {
     vector<int> sp_to_cps;
     vector<int> cps_to_ep;
-    vector<int> cps_to_cps;
+    vector<int> cp_to_cp;
+
+    for (int cp : cps) {
+      sp_to_cps.push_back(getDistance(sp, cp, pos));
+      cps_to_ep.push_back(getDistance(ep, cp, poe));
+    }
+
+    g.BellmanFord(cps[0]);
+    vector<int> pocps = g.p;
 
     PrintArray(pos);
     PrintArray(poe);
-    for (pair<int, int> cp : cps) {
-      sp_to_cps.push_back(getDistance(getIndex(this->sp.first, this->sp.second),
-                                      getIndex(cp.first, cp.second), pos));
-
-      cps_to_ep.push_back(getDistance(getIndex(this->ep.first, this->ep.second),
-                                      getIndex(cp.first, cp.second), poe));
-    }
-
+    PrintArray(pocps);
     PrintArray(sp_to_cps);
     PrintArray(cps_to_ep);
-  } else {
-    g.BellmanFord(getIndex(this->sp.first, this->sp.second));
-    vector<int> pos = g.p;
 
-    cout << getDistance(getIndex(this->sp.first, this->sp.second),
-                        getIndex(this->ep.first, this->ep.second), pos)
-         << endl;
+  } else if (this->cps.size() == 1) {
+    int sp_to_cps = getDistance(sp, cps[0], pos);
+
+    int cps_to_ep = getDistance(ep, cps[0], poe);
+
+    cout << sp_to_cps + cps_to_ep << endl;
+  } else {
+    cout << getDistance(sp, ep, pos) << endl;
   }
 }
 
