@@ -1,0 +1,4 @@
+/home/chaomai/Documents/Codes/Current/GitHub/learning/cpp_learning/local_word_count/test/mybuild/googlemock/CMakeFiles/gmock.dir
+/home/chaomai/Documents/Codes/Current/GitHub/learning/cpp_learning/local_word_count/test/mybuild/googlemock/gtest/CMakeFiles/gtest_main.dir
+/home/chaomai/Documents/Codes/Current/GitHub/learning/cpp_learning/local_word_count/test/mybuild/googlemock/CMakeFiles/gmock_main.dir
+/home/chaomai/Documents/Codes/Current/GitHub/learning/cpp_learning/local_word_count/test/mybuild/googlemock/gtest/CMakeFiles/gtest.dir
