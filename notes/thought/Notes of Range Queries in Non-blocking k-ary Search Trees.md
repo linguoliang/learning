@@ -1,4 +1,4 @@
-@(thought)[concurrency 并发]
+[concurrency 并发]
 
 # Notes of Range Queries in Non-blocking k-ary Search Trees
 
@@ -54,7 +54,7 @@ But actually it's correct.
 
 > My question:
 > If the update operations are always exist (insertion and deletion are frequently invoked), than `RangeQuery` cannot return. So the `RangeQuery` is actually blocked by these update operations.
-> 
+>
 > Answer from Brown:
 > However, your intuition about range queries blocking is not quite correct. What you are referring to is **starvation**. **Starvation can happen in any algorithm that is not wait-free.** In order to be non-blocking, the algorithm simply needs to guarantee that, if operations are performed infinitely often, then operations will succeed infinitely often. (I.e., the system, as a whole, makes progress, even if some thread(s) starve.) Equivalently, a non-blocking progress guarantee simply states that it is impossible for /all/ threads to block forever. In your example, the fact that a range query is blocked by updates is not a problem, because the updates make progress.
 

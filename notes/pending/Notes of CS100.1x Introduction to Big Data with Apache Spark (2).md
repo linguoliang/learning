@@ -1,4 +1,4 @@
-@(@pending)[machine learning 机器学习, spark, python]
+[machine learning 机器学习, spark, python]
 
 # Notes of CS100.1x Introduction to Big Data with Apache Spark (2)
 
@@ -19,7 +19,7 @@ schema: a description of a particular collection of data using a given data mode
 
 * pandas
 	a table with named columns.
-	
+
 * pyspark
 	a DataFrame is a **distributed** collection of data organized into named columns. It is conceptually equivalent to a table in a relational database or a data frame in R/Python, but with richer optimizations under the hood.
 

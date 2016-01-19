@@ -1,4 +1,4 @@
-@(thought)[concurrency 并发]
+[concurrency 并发]
 
 # RDCSS
 

@@ -1,4 +1,4 @@
-@(thought)[c/c++, programming language 编程语言]
+[c/c++, programming language 编程语言]
 
 # `char *(*(**foo[][8])())[]`...
 

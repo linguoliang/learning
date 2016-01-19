@@ -1,4 +1,4 @@
-@(thought)[concurrency 并发]
+[concurrency 并发]
 
 # Notes of Read-Log-Update A Lightweight Synchronization Mechanism for Concurrent Programming
 
@@ -25,58 +25,58 @@ RCU, this barrier-based mechanism, allows for simple epoch-based reclamation of 
 ```c
 // For all operations:
 
-   +--------------+    
-   |all operations|    
-   +------+-------+    
-          |            
-          |            
+   +--------------+
+   |all operations|
+   +------+-------+
+          |
+          |
 +---------v-----------+
 |read the global clock|
 +---------+-----------+
-          |            
-          |            
-       +--v--+         
-       |start|         
-       +-----+         
+          |
+          |
+       +--v--+
+       |start|
+       +-----+
 
 // For writer:
-                              +------+                             
-              +--+            |writer|                             
-              |               +---+--+                             
-              |                   |                                
-              |                   |                                
+                              +------+
+              +--+            |writer|
+              |               +---+--+
+              |                   |
+              |                   |
               |     +-------------v-------------------------------+
               |     | copy the object into a its own              |
 modification<-+     |thread wirte-log and lock the original object|
               |     +-------------+-------------------------------+
-              |                   |                                
-              |                   |                                
-              |      +------------v-------------+                  
-              |      |manipulate the object copy|                  
-              +---+  +------------+-------------+                  
-                                  |                                
-                                  |                                
-            +---+    +------------v------------------------------+ 
-            |        |increments the write clock and global clock| 
-            |        +------------+------------------------------+ 
-            |                     |                                
-            |                     |                                
-            |      +--------------v----------------+               
-            |      |splits operations into two sets|               
-            |      +--------------+----------------+               
-            |                     |                                
-    commit<-+                     |                                
-            |     +---------------v-----------------+              
-            |     |wait for old operations to finish|              
-            |     +---------------+-----------------+              
-            |                     |                                
-            |                     |                                
-            |     +---------------v--------------------+           
-            |     |   write back the new objects       |           
-            |     |from the writer-log into the memory,|           
-            |     |  overwriting the old objects,      |           
-            |     |      release the locks             |           
-            +---+ +------------------------------------+           
+              |                   |
+              |                   |
+              |      +------------v-------------+
+              |      |manipulate the object copy|
+              +---+  +------------+-------------+
+                                  |
+                                  |
+            +---+    +------------v------------------------------+
+            |        |increments the write clock and global clock|
+            |        +------------+------------------------------+
+            |                     |
+            |                     |
+            |      +--------------v----------------+
+            |      |splits operations into two sets|
+            |      +--------------+----------------+
+            |                     |
+    commit<-+                     |
+            |     +---------------v-----------------+
+            |     |wait for old operations to finish|
+            |     +---------------+-----------------+
+            |                     |
+            |                     |
+            |     +---------------v--------------------+
+            |     |   write back the new objects       |
+            |     |from the writer-log into the memory,|
+            |     |  overwriting the old objects,      |
+            |     |      release the locks             |
+            +---+ +------------------------------------+
 ```
 
 The writer's modifications are:
@@ -102,7 +102,7 @@ Two approaches:
 
 Using a global lock for each writer is simplicity of the code and the concurrency that does exist between read-only and write operations.
 
-But the drawback is a lack of scalability. 
+But the drawback is a lack of scalability.
 
 ### Fine-grained Locks
 
@@ -143,23 +143,23 @@ Object header:
 # RLU Deferring
 
 ```c
-+----------------------------------+           
-|writer saves the current write-log|           
-|and generates new log for the next|           
-|writer                            |           
-+---------+------------------------+           
-          |                                    
++----------------------------------+
+|writer saves the current write-log|
+|and generates new log for the next|
+|writer                            |
++---------+------------------------+
+          |
           | if a writer tries to lock an object
-          | that is already locked             
-          |                                    
-+---------v---------------------------+        
-|writer sends a "sync request" to     |        
-|the conflicting thread to force it to|        
-|release it locks                     |        
-|                                     |        
-|(global-clock++ -> rlu sync ->       |        
-| write back -> unlock                |        
-+-------------------------------------+        
+          | that is already locked
+          |
++---------v---------------------------+
+|writer sends a "sync request" to     |
+|the conflicting thread to force it to|
+|release it locks                     |
+|                                     |
+|(global-clock++ -> rlu sync ->       |
+| write back -> unlock                |
++-------------------------------------+
 ```
 
 # References

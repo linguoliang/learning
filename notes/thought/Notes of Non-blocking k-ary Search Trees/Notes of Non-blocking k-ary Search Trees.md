@@ -1,4 +1,4 @@
-@(thought)[concurrency 并发]
+[concurrency 并发]
 
 # Notes of Non-blocking k-ary Search Trees
 
@@ -94,7 +94,7 @@ Before an internal node is to disappear from the tree, it must ﬁrst be marked.
 
 Initial stat of the `pending` filed in internal node.
 
-# Help Mechanism 
+# Help Mechanism
 
 If an operation is unexpectedly delayed while holding access to a ﬂagged or marked node, the progress cannot be guaranteed. So helping mechanism is necessary. The method taken here is similar to the one in BST.
 

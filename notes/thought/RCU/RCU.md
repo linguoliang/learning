@@ -1,4 +1,4 @@
-@(thought)[concurrency 并发, programming language 编程语言, linux]
+[concurrency 并发, programming language 编程语言, linux]
 
 # RCU
 
@@ -173,7 +173,7 @@ for_each_online_cpu(cpu)
 ```
 
 `for_each_online_cpu(cpu)` loop through all CPU:
-`run_on()` switches the current thread to the specified CPU --> forces 
+`run_on()` switches the current thread to the specified CPU --> forces
 a context switch on that CPU --> guarantee the completion
 
 Therefore, the completion of all prior RCU read-side critical sections are guaranteed.
@@ -269,7 +269,7 @@ A single global reference counter for a large variety of data structures causes 
 OK, when I read about this section in the original article, I'm sure that I am the poor man. But they (RCU and Garbage Collector) has some differences.
 
  RCU requires that
- 
+
 * manually indicate when a given data structure is eligible to be collected.
 * manually mark the RCU read-side critical sections where references might legitimately be held.
 

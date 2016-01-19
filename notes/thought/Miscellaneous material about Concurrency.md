@@ -1,4 +1,4 @@
-@(thought)[data structures and algorithms 数据结构和算法]
+[data structures and algorithms 数据结构和算法]
 
 # Miscellaneous material about Concurrency
 

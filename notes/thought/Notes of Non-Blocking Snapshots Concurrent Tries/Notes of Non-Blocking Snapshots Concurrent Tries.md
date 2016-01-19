@@ -1,4 +1,4 @@
-@(thought)[concurrency 并发, data structures and algorithms 数据结构和算法]
+[concurrency 并发, data structures and algorithms 数据结构和算法]
 
 # Notes of Non-Blocking Snapshots Concurrent Tries
 

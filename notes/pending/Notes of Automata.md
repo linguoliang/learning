@@ -1,4 +1,4 @@
-@(@pending)[mathematics 数学]
+[mathematics 数学]
 
 # Notes of Automata
 
@@ -127,7 +127,7 @@ Every NFA is an $\epsilon$-NFA.
 
 ### $\epsilon$-NFA -> NFA (Closure construction)
 
-Given an $\epsilon$-NFA with $Q, \Sigma, \delta_E, q_0, F$, equivalent NFA: 
+Given an $\epsilon$-NFA with $Q, \Sigma, \delta_E, q_0, F$, equivalent NFA:
 
 * $Q, \Sigma, q_0$
 * $\delta_N(q, a) = \bigcup_{p \in closure(q)}{\delta_E}(p, a)$
@@ -156,8 +156,8 @@ $L_1 \circ L_2 = \{xy | x \in L_1, y \in L_2\}$
 ### Kleene star (Kleene closure)
 
 $$
-L^n = 
-\begin{cases} 
+L^n =
+\begin{cases}
 \{\epsilon\} & \text{if } n = 0 \\
 L^{n-1} \circ L & \text{if } x > 0
 \end{cases}
@@ -177,7 +177,7 @@ $$
 \emptyset \\
 \epsilon \\
 a
-\end{array} & 
+\end{array} &
 \begin{array}{c}
 L(\emptyset) = \{\} \\
 L(\epsilon) = \{\epsilon\} \\

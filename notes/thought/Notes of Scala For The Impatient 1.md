@@ -1,4 +1,4 @@
-@(@action inbox)[programming language 编程语言, scala]
+[programming language 编程语言, scala]
 
 # Notes of Scala For The Impatient 1
 

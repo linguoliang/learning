@@ -1,4 +1,4 @@
-@(@action inbox)[concurrency 并发]
+[concurrency 并发]
 
 # The Art of Multiprocessor Programming 1
 

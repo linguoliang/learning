@@ -1,4 +1,4 @@
-@(thought)[spark]
+[spark]
 
 # Spark
 

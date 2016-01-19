@@ -1,5 +1,3 @@
-@(@schedule)
-
 # To-dos
 
 |时段|事项|
