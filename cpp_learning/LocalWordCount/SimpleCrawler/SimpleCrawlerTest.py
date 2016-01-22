@@ -1,9 +1,21 @@
 import unittest
 
+from Crawler import Crawler
+
 class Test_SimpleCrawlerTest(unittest.TestCase):
-    def test_A(self):
-      f=open('data\test.txt')
-      print(f)
+    def testFilePath(self):
+      try:
+        with open(r'D:\Documents\GitHub\learning\cpp_learning\LocalWordCount\data\test.txt') as file:
+          print(file)
+      except:
+        print('normal error')
+
+    def testSaveFile(self):
+      saveFile('test')
+
+    def testCrawler(self):
+      c = Crawler('http://news.dbanotes.net')
+      c.crawl()
 
 if __name__ == '__main__':
     unittest.main()
