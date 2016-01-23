@@ -1,6 +1,6 @@
-import os.path
 import bs4
 import requests
+import os.path
 
 from collections import deque
 
