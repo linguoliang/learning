@@ -3,9 +3,11 @@ import requests
 import os.path
 
 from collections import deque
+from threading import Lock
+from threading import Thread
 
 class Crawler:
-  def __init__(self,filePath, seed, timeout=10, maxCount=10,  
+  def __init__(self,filePath, seed, timeout=1, maxCount=10, threadNum=4,
                headers={
               'Connection':'keep-alive',
               'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -17,10 +19,14 @@ class Crawler:
     self.seed_ = seed
     self.timeout_ = timeout
     self.maxCount_ = maxCount
+    self.threadNum_ = threadNum
     self.urlCount_ = 1
     self.urlVisited_ = set()
     self.urlQueue_ = deque()
     self.urlQueue_.append(self.seed_)
+
+    self.lock_ = Lock()
+    self.fileLock_ = Lock()
 
     if not os.path.exists(self.filePath_):
       with open(self.filePath_, 'w') as file:
@@ -31,32 +37,7 @@ class Crawler:
       with open(self.filePath_, 'a') as file:
         file.write(data)
     except:
-      pass
+      print('saving error')
 
-  def crawl(self, maxCount=100):
-    while self.urlQueue_ and self.urlCount_ < self.maxCount_:
-      url = self.urlQueue_.popleft()
-      self.urlVisited_ |= {url}
-
-      print('geting: ' + url)
-
-      try:
-        response = requests.get(url, headers = self.headers_, timeout = self.timeout_)
-      except:
-        continue
-      
-      print('got: ' + str(self.urlCount_))
-      response.encoding = response.apparent_encoding
-      soup = bs4.BeautifulSoup(response.text, 'html.parser')
-  
-      print('saving: ' + url)
-      self._saveFile(soup.body.text)
-
-      self.urlCount_ += 1
-
-      for l in soup.find_all('a'):
-        if l not in self.urlVisited_:
-          try:
-            self.urlQueue_.append(l['href'])
-          except:
-            print('ignore: ' + str(l))
+  def crawl(self):
+    pass

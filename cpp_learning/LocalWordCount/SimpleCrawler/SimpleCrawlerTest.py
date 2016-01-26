@@ -10,9 +10,6 @@ class Test_SimpleCrawlerTest(unittest.TestCase):
       except:
         print('normal error')
 
-    def testSaveFile(self):
-      saveFile('test')
-
     def testCrawler(self):
       c = Crawler('http://news.dbanotes.net')
       c.crawl()
