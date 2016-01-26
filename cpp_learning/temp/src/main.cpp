@@ -25,16 +25,22 @@ class Derived : public Base {
 };
 
 int main() {
-  Base b;
+  // Base b;
 
-  cout << sizeof(int) << " " << sizeof(int*) << endl;
-  cout << "address of vfptr:" << &b << endl;
-  cout << "address of vftable:" << *(long*)(&b) << endl;
-  cout << "address of the first function in vftable:" << (int*)(*(long*)(&b))
-       << endl;
+  // cout << sizeof(int) << " " << sizeof(int*) << endl;
+  // cout << "address of vfptr:" << &b << endl;
+  // cout << "address of vftable:" << *(long*)(&b) << endl;
+  // cout << "address of the first function in vftable:" << (int*)(*(long*)(&b))
+  // << endl;
 
-  void (*pf)(void) = (void (*)(void)) * (int*)(*(int*)(&b));
-  pf = (void (*)(void)) * (int*)(*(int*)(&b));
-  pf();
+  // void (*pf)(void) = (void (*)(void)) * (int*)(*(int*)(&b));
+  // pf = (void (*)(void)) * (int*)(*(int*)(&b));
+  // pf();
+  // return 0;
+
+  int a[10];
+
+  decltype(a) b;
+
   return 0;
 }
