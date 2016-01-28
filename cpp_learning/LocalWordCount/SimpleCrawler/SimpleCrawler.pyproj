@@ -25,6 +25,9 @@
     <Compile Include="Crawler.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Profile.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SimpleCrawler.py" />
     <Compile Include="SimpleCrawlerTest.py">
       <SubType>Code</SubType>
