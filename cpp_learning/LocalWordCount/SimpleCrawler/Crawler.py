@@ -1,48 +1,100 @@
 import bs4
+import json
+import logging
+import os
 import queue
+import random
+import re
 import requests
 import threading
 import time
-import os
 import uuid
 
-class Crawler():
-  def __init__(self, filePath, seeds=[], timeout=1, maxCount=10, threadNum=4, pauseTime=5,
-               headers={
-              'Connection':'keep-alive',
-              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-              'Accept-Language':'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
-              'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'
-              }):
-    self.headers_ = headers
-    self.filePath_ = filePath
-    self.timeout_ = timeout
-    self.maxCount_ = maxCount
-    self.threadNum_ = threadNum
-    self.pauseTime_ = pauseTime
+class CrawlerConf(object):
+  def __init__(self, confFile):
+    if len(confFile) == 0:
+      raise ValueError("conf file isn't set")
+    with open(confFile, 'r') as cf:
+      j = json.load(cf)
+
+    self.proxies_ = j['crawler']['proxies']
+    self.seeds_ = j['crawler']['seeds']
+    self.timeout_ = j['crawler']['timeout']
+    self.maxCount_ = j['crawler']['max count']
+    self.threadNum_ = j['crawler']['thread num']
+    self.pauseTime_ = j['crawler']['pause time']
+    self.headers_ = j['crawler']['headers']
+
+    dataFolder = j['crawler']['crawler data folder']
+
+    if dataFolder == '':
+      dataFolder = os.getcwd()
+    else:
+      if not os.path.exists(dataFolder):
+        os.makedirs(dataFolder)
+      self.dataPath_ = os.path.join(dataFolder.strip('/'), 'CrawlerData_' + time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime()) + '.txt')
+    
+    logFolder = j['crawler']['crawler log folder']
+
+    if logFolder == '':
+      logFolder = os.getcwd()
+    else:
+      if not os.path.exists(logFolder):
+        os.makedirs(logFolder)
+      logPath = os.path.join(logFolder.strip('/'), 'CrawlerLog_' + time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime()) + '.txt')
+      
+    level = getattr(logging, j['crawler']['log level'].upper(), None)
+
+    if not isinstance(level, int):
+      raise ValueError('invalid log level: %s' % loglevel)
+
+    logging.basicConfig(filename=logPath, level=level,
+                    format='%(asctime)s:%(levelname)s:%(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+    logging.info('timeout: {0}'.format(self.timeout_))
+    logging.info('max count: {0}'.format(self.maxCount_))
+    logging.info('thread num: {0}'.format(self.threadNum_))
+    logging.info('pause time: {0}'.format(self.pauseTime_))
+    logging.info('headers: {0}'.format(self.headers_))
+    logging.info('crawler data: {0}'.format(self.dataPath_))
+    logging.info('crawler log: {0}'.format(logPath))
+    logging.info('setup crawler')
+    logging.info('add seeds')
+
+class Crawler(object):
+  def __init__(self, crawlerConf):
+    self.timeout_ = crawlerConf.timeout_
+    self.maxCount_ = crawlerConf.maxCount_
+    self.threadNum_ = crawlerConf.threadNum_
+    self.pauseTime_ = crawlerConf.pauseTime_
+    self.headers_ = crawlerConf.headers_
+    self.dataPath_ = crawlerConf.dataPath_
+
+    self.proxies_ = []
+    for p in crawlerConf.proxies_:
+      if re.search('^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,4}$', p):
+        p = 'http://' + p
+
+      self.proxies_.append({'http': p, 'https': p})
+
     self.urlCount_ = 0
-    self.urlVisited_ = self._UrlVisited()
-    self.urlQueue_ = self._UrlQueue()
     self.fileLock_ = threading.Lock()
-    self.printLock_ = threading.Lock()
+    self.logLock_ = threading.Lock()
+    self.urlVisited_ = self._UrlVisited()
+    self.urlQueue_ = self._UrlQueue(self.logLock_)
 
-    for seed in seeds:
+    for seed in crawlerConf.seeds_:
       self.urlQueue_.put(seed.strip('/'))
-
-    if os.path.exists(self.filePath_):
-      os.remove(self.filePath_)
-
-    with open(self.filePath_, 'w') as file:
-      pass
 
   def _saveFile(self, data):
     try:
-      with open(self.filePath_, 'a', encoding = 'utf-8') as file:
+      with open(self.dataPath_, 'a', encoding = 'utf-8') as file:
         file.write(data)
     except Exception as e:
-      with self.printLock_:
-        print('in _saveFile')
-        print(e)
+      with self.logLock_:
+        logging.info('data unsaved')
+        logging.debug('in _saveFile')
+        logging.debug(e)
 
   def _generateItem(self, url, title, text):
     return '{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\n'.format(1, 2, 3, 4, 5, 6, 7, uuid.uuid5(uuid.NAMESPACE_URL, url), title, text, url)
@@ -56,12 +108,13 @@ class Crawler():
 
         try:
           time.sleep(self.pauseTime_)
-          response = requests.get(url, headers=self.headers_, timeout=self.timeout_)
+          response = requests.get(url, headers=self.headers_, timeout=self.timeout_,
+                                  proxies=self.proxies_[random.randint(0, len(self.proxies_) - 1)])
           content = response.content.decode('utf-8', 'ignore')
         except Exception as e:
-          with self.printLock_:
-            print('in _fetch requests.get')
-            print(e)
+          with self.logLock_:
+            logging.debug('in _fetch: requests.get')
+            logging.debug(e)
           continue
         
         soup = bs4.BeautifulSoup(content, 'html.parser')
@@ -77,22 +130,22 @@ class Crawler():
 
         with self.fileLock_:
           if len(text) > 0:
-            print('got: ' + str(self.urlCount_) + ': ' + url)
-            print('saving: ' + url)
+            logging.info('got: ' + str(self.urlCount_) + ': ' + url)
+            logging.info('saving: ' + url)
 
             try:
               title = ' '.join(soup.find('title').text.split())
             except:
-              print('no title finded, use customized one')
+              logging.info('no title finded, use customized one')
               title = text[:6]
             
             self._saveFile(self._generateItem(url, title, text))
             self.urlCount_ += 1
           else:
-            print('ignoring: ' + url)
+            logging.info('ignoring: ' + url)
 
           if self.urlCount_ > self.maxCount_:
-            break
+            return
 
         for l in soup.find_all('a'):
           try:
@@ -111,12 +164,12 @@ class Crawler():
               if newUrl not in self.urlVisited_ and newUrl not in self.urlQueue_:
                 self.urlQueue_.put(newUrl)
               else:
-                with self.printLock_:
-                  print('page ' + url + ' exists')
+                with self.logLock_:
+                  logging.info('page ' + url + ' exists')
 
           except Exception as e:
-            with self.printLock_:
-              print(e)
+            with self.logLock_:
+              logging.warning(e)
 
   def crawl(self):
     threads = []
@@ -129,7 +182,7 @@ class Crawler():
     for t in threads:
       t.join()
 
-  class _UrlVisited():
+  class _UrlVisited(object):
     def __init__(self):
       self.rwlock_ = threading.RLock()
       self.urlVisited_ = set()
@@ -142,8 +195,9 @@ class Crawler():
       with self.rwlock_:
         self.urlVisited_ |= {item}
 
-  class _UrlQueue():
-    def __init__(self):
+  class _UrlQueue(object):
+    def __init__(self, logLock):
+      self.logLock_ = logLock
       self.urlcv_ = threading.Condition()
       self.urlQueue_ = queue.deque()
 
@@ -161,8 +215,8 @@ class Crawler():
           item = self.urlQueue_.popleft()
           return item
         except Exception as e:
-          with self.printLock_:
-            print(e)
+          with self.logLock_:
+            logging.warning(e)
 
     def put(self, item):
       with self.urlcv_:

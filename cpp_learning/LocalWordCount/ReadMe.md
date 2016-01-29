@@ -1,6 +1,6 @@
 # Local Word Count
 
-Count word in a huge file using single machine.
+Count word in a huge record file using single machine.
 
 # Requirement
 
@@ -31,6 +31,16 @@ Count word in a huge file using single machine.
 * `term, frequency, percentage(frequency/total lines)`
 * Fields are separated by `\t`.
 
-# File Format
+# Record File Format
 
 Each line is a record. The line break is `\n`. Fields are separated by `\t`. The 8th and 9th field are wordid and word.
+
+# Progress
+
+## Finished
+
+* Crawler (Python)
+
+## ToDo
+
+* Word Count (C++)
