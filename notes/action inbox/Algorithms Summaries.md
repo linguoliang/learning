@@ -1,5 +1,3 @@
-[data structures and algorithms 数据结构和算法]
-
 # Algorithms Summaries
 
 # Dynamic Programming
@@ -56,5 +54,3 @@ Similarities:
 Variations:
 
 1. Partition Problem
-
-## Word wrap

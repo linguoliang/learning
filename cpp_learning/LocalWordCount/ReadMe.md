@@ -44,3 +44,9 @@ Each line is a record. The line break is `\n`. Fields are separated by `\t`. The
 ## ToDo
 
 * Word Count (C++)
+
+## Project Used
+
+* [nlohmann/json](https://github.com/nlohmann/json)
+* [yanyiwu/cppjieba](https://github.com/yanyiwu/cppjieba)
+* [gabime/spdlog](https://github.com/gabime/spdlog)

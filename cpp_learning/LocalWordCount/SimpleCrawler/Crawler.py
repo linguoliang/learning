@@ -25,23 +25,23 @@ class CrawlerConf(object):
     self.pauseTime_ = j['crawler']['pause time']
     self.headers_ = j['crawler']['headers']
 
-    dataFolder = j['crawler']['crawler data folder']
+    fetchedFolder = j['fetched folder']
 
-    if dataFolder == '':
-      dataFolder = os.getcwd()
+    if fetchedFolder == '':
+      fetchedFolder = os.getcwd()
     else:
-      if not os.path.exists(dataFolder):
-        os.makedirs(dataFolder)
-      self.dataPath_ = os.path.join(dataFolder.strip('/'), 'CrawlerData_' + time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime()) + '.txt')
+      if not os.path.exists(fetchedFolder):
+        os.makedirs(fetchedFolder)
+    self.fetchedPath_ = os.path.join(fetchedFolder.strip('/'), 'CrawlerData_' + time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime()) + '.txt')
     
-    logFolder = j['crawler']['crawler log folder']
+    logFolder = j['log folder']
 
     if logFolder == '':
       logFolder = os.getcwd()
     else:
       if not os.path.exists(logFolder):
         os.makedirs(logFolder)
-      logPath = os.path.join(logFolder.strip('/'), 'CrawlerLog_' + time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime()) + '.txt')
+    logPath = os.path.join(logFolder.strip('/'), 'CrawlerLog_' + time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime()) + '.txt')
       
     level = getattr(logging, j['crawler']['log level'].upper(), None)
 
@@ -56,19 +56,14 @@ class CrawlerConf(object):
     logging.info('thread num: {0}'.format(self.threadNum_))
     logging.info('pause time: {0}'.format(self.pauseTime_))
     logging.info('headers: {0}'.format(self.headers_))
-    logging.info('crawler data: {0}'.format(self.dataPath_))
+    logging.info('crawler data: {0}'.format(self.fetchedPath_))
     logging.info('crawler log: {0}'.format(logPath))
     logging.info('setup crawler')
     logging.info('add seeds')
 
 class Crawler(object):
   def __init__(self, crawlerConf):
-    self.timeout_ = crawlerConf.timeout_
-    self.maxCount_ = crawlerConf.maxCount_
-    self.threadNum_ = crawlerConf.threadNum_
-    self.pauseTime_ = crawlerConf.pauseTime_
-    self.headers_ = crawlerConf.headers_
-    self.dataPath_ = crawlerConf.dataPath_
+    self.crawlerConf = crawlerConf
 
     self.proxies_ = []
     for p in crawlerConf.proxies_:
@@ -88,7 +83,7 @@ class Crawler(object):
 
   def _saveFile(self, data):
     try:
-      with open(self.dataPath_, 'a', encoding = 'utf-8') as file:
+      with open(self.crawlerConf.fetchedPath_, 'a', encoding = 'utf-8') as file:
         file.write(data)
     except Exception as e:
       with self.logLock_:
@@ -107,8 +102,8 @@ class Crawler(object):
         self.urlVisited_.add(url)
 
         try:
-          time.sleep(self.pauseTime_)
-          response = requests.get(url, headers=self.headers_, timeout=self.timeout_,
+          time.sleep(self.crawlerConf.pauseTime_)
+          response = requests.get(url, headers=self.crawlerConf.headers_, timeout=self.crawlerConf.timeout_,
                                   proxies=self.proxies_[random.randint(0, len(self.proxies_) - 1)])
           content = response.content.decode('utf-8', 'ignore')
         except Exception as e:
@@ -144,7 +139,7 @@ class Crawler(object):
           else:
             logging.info('ignoring: ' + url)
 
-          if self.urlCount_ > self.maxCount_:
+          if self.urlCount_ > self.crawlerConf.maxCount_:
             return
 
         for l in soup.find_all('a'):
@@ -173,7 +168,7 @@ class Crawler(object):
 
   def crawl(self):
     threads = []
-    for t in range(self.threadNum_):
+    for t in range(self.crawlerConf.threadNum_):
       threads.append(threading.Thread(target=self._fetch))
 
     for t in threads:

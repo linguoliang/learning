@@ -1,5 +1,3 @@
-[concurrency 并发]
-
 # The Art of Multiprocessor Programming 1
 
 # Chapter 1 Introduction

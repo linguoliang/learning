@@ -1,5 +1,3 @@
-[programming language 编程语言, scala]
-
 # Notes of Scala For The Impatient 2
 
 # 控制结构和函数
