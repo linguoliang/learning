@@ -8,8 +8,25 @@
 
 using std::cout;
 using std::endl;
+
+#ifdef _MSC_VER
+
+using std::wifstream;
+using std::wstring;
+
+using ifstream = wifstream;
+using string = wstring;
+
+#else
+
 using std::ifstream;
 using std::string;
+
+using ifstream = ifstream;
+using string = string;
+
+#endif // ifdef _MSC_VER
+
 
 WordCount::WordCount(const Conf &c): conf(c) {
 }
@@ -24,7 +41,6 @@ void WordCount::Count() {
     return;
   }
 
-  size_t lineNum = 0;
   string item;
   while (getline(fs, item)) {
     if (item.size() == 0) {
