@@ -6,4 +6,4 @@ add_subdirectory(LocalWordCount)
 add_subdirectory(UnitTests)
 
 enable_testing()
-add_test(NAME ./unit_test COMMAND ./unit_test)
+add_test(NAME ./unit_test COMMAND ./Test/unit_test)

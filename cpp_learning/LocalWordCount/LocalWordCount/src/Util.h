@@ -5,7 +5,12 @@
 #include <iostream>
 #include <string>
 
-std::string trimTail(const std::string &str, const std::string &toTrim);
+// inline函数可以在程序中多次定义，
+// 若无inline，则会提示该函数重定义
+inline std::string trimTail(const std::string &str, const std::string &toTrim) {
+  auto last = str.find_last_not_of(toTrim);
+  return str.substr(0, last + 1);
+}
 
 class Timer {
  public:

@@ -26,6 +26,7 @@ using std::wofstream;
 using std::wstring;
 
 using ifstream = wifstream;
+using ofstream = wofstream;
 using string = wstring;
 
 #else
@@ -35,6 +36,7 @@ using std::ofstream;
 using std::string;
 
 using ifstream = ifstream;
+using ofstream = ofstream;
 using string = string;
 
 #endif  // ifdef _MSC_VER
