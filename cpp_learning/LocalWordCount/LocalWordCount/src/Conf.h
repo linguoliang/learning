@@ -3,12 +3,10 @@
 
 #include <string>
 
-class Conf {
- public:
+struct Conf {
   Conf(std::string confPath);
   ~Conf() {}
 
-  // private:
   std::string fetchedPath_;
   std::string logPath_;
   std::string resPath_;

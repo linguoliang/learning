@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Students Enrollment Management System.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Students Enrollment Management SystemDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GraduateStudent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UndergraduateStudent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IDataAccess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentSetItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CourseItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Courses.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentSetAssociationHolder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassesAssociationHolder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CoursesAssociationHolder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AllStudents.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogClasses.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogCourses.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogStudents.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogStudentInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogCourseInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogClassInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogLogin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentsManagementControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AppControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Users.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Students Enrollment Management System.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Students Enrollment Management SystemDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GraduateStudent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UndergraduateStudent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IDataAccess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentSetItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CourseItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Courses.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentSetAssociationHolder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassesAssociationHolder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CoursesAssociationHolder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AllStudents.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogClasses.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogCourses.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogStudents.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogStudentInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogCourseInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogClassInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogLogin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentsManagementControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AppControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Users.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Students Enrollment Management System.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StudentsEnrollmentManagementSystem.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Students Enrollment Management System.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\favicon.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\monv.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

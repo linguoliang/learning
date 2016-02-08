@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Students Enrollment Management System", "Students Enrollment Management System\Students Enrollment Management System.vcxproj", "{F5F23D6E-4C18-4BCB-982D-20617F36CE77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D1624412-34AB-42D2-B34A-7BBBFB43C30A}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClassTest", "ClassTest\ClassTest.vcxproj", "{589F1F2E-1BEB-43D1-B7D1-FCF75016B92B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F5F23D6E-4C18-4BCB-982D-20617F36CE77} = {F5F23D6E-4C18-4BCB-982D-20617F36CE77}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5F23D6E-4C18-4BCB-982D-20617F36CE77}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F5F23D6E-4C18-4BCB-982D-20617F36CE77}.Debug|Win32.Build.0 = Debug|Win32
+		{F5F23D6E-4C18-4BCB-982D-20617F36CE77}.Release|Win32.ActiveCfg = Release|Win32
+		{F5F23D6E-4C18-4BCB-982D-20617F36CE77}.Release|Win32.Build.0 = Release|Win32
+		{589F1F2E-1BEB-43D1-B7D1-FCF75016B92B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{589F1F2E-1BEB-43D1-B7D1-FCF75016B92B}.Debug|Win32.Build.0 = Debug|Win32
+		{589F1F2E-1BEB-43D1-B7D1-FCF75016B92B}.Release|Win32.ActiveCfg = Release|Win32
+		{589F1F2E-1BEB-43D1-B7D1-FCF75016B92B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

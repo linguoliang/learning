@@ -1,4 +1,5 @@
-#include "chpater3.h"
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -45,6 +46,4 @@ void stdString() {
   }
 }
 
-void ch3() {
-  // stdString();
-}
+int main() { stdString(); }

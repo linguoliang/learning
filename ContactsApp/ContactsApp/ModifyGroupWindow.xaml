@@ -1,0 +1,11 @@
+﻿<Window x:Class="ContactsApp.ModifyGroupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ModifyGroupWindow" Height="215" Width="300">
+    <Grid>
+        <Label Content="Group Name" HorizontalAlignment="Left" Margin="15,37,0,0" VerticalAlignment="Top"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="89,138,0,0" VerticalAlignment="Top" Width="75" PreviewMouseLeftButtonDown="OK_PreviewMouseLeftButtonDown"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="193,138,0,0" VerticalAlignment="Top" Width="75" PreviewMouseLeftButtonDown="Cancel_PreviewMouseLeftButtonDown"/>
+        <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="148,37,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+    </Grid>
+</Window>

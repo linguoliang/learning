@@ -1,0 +1,12 @@
+﻿<Window x:Class="ContactsApp.PersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PersonWindow" Height="386" Width="682">
+    <Grid Name="grid" Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="207*"/>
+        </Grid.ColumnDefinitions>
+    </Grid>
+</Window>
